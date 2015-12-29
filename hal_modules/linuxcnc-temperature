@@ -5,17 +5,21 @@ port = "/dev/ttyUSB0"
 
 h = hal.component("temperature")
 for i in range(0, 12):
-	h.newpin("temp" + str(i), hal.HAL_FLOAT, hal.HAL_OUT)
+    h.newpin("temp" + str(i), hal.HAL_FLOAT, hal.HAL_OUT)
 h.ready()
 
 for i in range(0, 12):
-	h["temp" + str(i)] = 0
+    h["temp" + str(i)] = 0
 
 try:
     s = serial.Serial(port)
     while 1:
-       	values = json.loads(s.readline())["temperatures"]
-        for val, i in zip(values, range(0, len(values))):
-            h["temp" + str(i)] = val
+        readouts = s.readline()
+        try:
+            values = json.loads(readouts)["temperatures"]
+            for val, i in zip(values, range(0, len(values))):
+                h["temp" + str(i)] = val
+        except ValueError:
+            pass
 except KeyboardInterrupt:
     raise SystemExit
