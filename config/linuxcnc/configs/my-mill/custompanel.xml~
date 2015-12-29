@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+	<label><text>"Teplota 1"</text></label>
+	<number>
+		<halpin>"temp.1"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f °C"</format>
+	</number>
+
+	<label><text>"Teplota 2"</text></label>
+	<number>
+		<halpin>"temp.2"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f °C"</format>
+	</number>
+
+	<meter>
+	    <halpin>"tempmeter.1"</halpin>
+	    <text>"Ložiska"</text>
+	    <subtext>"°C"</subtext>
+	    <size>200</size>
+	    <min_>0</min_>
+	    <max_>100</max_>
+	    <majorscale>10</majorscale>
+	    <minorscale>2</minorscale>
+	    <region1>(50,70,"yellow")</region1>
+	    <region2>(0,50,"green")</region2>
+	    <region3>(70,100,"red")</region3>
+	</meter>
+
+	<label><text>"P"</text></label>
+	<scale>
+	    <font>("Helvetica",16)</font>
+	    <width>"25"</width>
+	    <halpin>"spindle.p"</halpin>
+	    <resolution>10</resolution>
+	    <orient>HORIZONTAL</orient>
+	    <initval>220</initval>
+	    <min_>0</min_>
+	    <max_>1000</max_>
+	</scale>
+
+	<label><text>"I"</text></label>
+	<scale>
+	    <font>("Helvetica",16)</font>
+	    <width>"25"</width>
+	    <halpin>"spindle.i"</halpin>
+	    <resolution>10</resolution>
+	    <orient>HORIZONTAL</orient>
+	    <initval>100</initval>
+	    <min_>0</min_>
+	    <max_>1000</max_>
+	</scale>
+
+	<label><text>"D"</text></label>
+	<scale>
+	    <font>("Helvetica",16)</font>
+	    <width>"25"</width>
+	    <halpin>"spindle.d"</halpin>
+	    <resolution>10</resolution>
+	    <orient>HORIZONTAL</orient>
+	    <initval>150</initval>
+	    <min_>0</min_>
+	    <max_>1000</max_>
+	</scale>
+
+	<label><text>"Otáčky vřetena"</text></label>
+	<number>
+		<halpin>"spindle.show"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f RPM"</format>
+	</number>
+</pyvcp>

@@ -1,0 +1,87 @@
+#!/usr/bin/python
+import hal, serial, struct, time
+
+port = "/dev/ttyUSB1"
+
+def send_stop(ser):
+    data = struct.pack('<BBc', 0x80, 0, b'B')
+    ser.write(data)
+
+def send_start(ser):
+    data = struct.pack('<BBc', 0x80, 0, b'S')
+    ser.write(data)
+
+def send_p(ser, p):
+    data = struct.pack('<BBcf', 0x80, 4, b"P", float(p)/1000000)
+    ser.write(data)
+
+def send_i(ser, i):
+    data = struct.pack('<BBcf', 0x80, 4, b"I", float(i)/1000000)
+    ser.write(data)
+
+def send_d(ser, i):
+    data = struct.pack('<BBcf', 0x80, 4, b"D", float(d)/1000000)
+    ser.write(data)
+
+def send_rpm(ser, rpm):
+    data = struct.pack('<BBcH', 0x80, 2, b"R", rpm)
+    ser.write(data)
+
+def read(ser):
+    while(ord(ser.read()) != 0x80):
+        pass
+    size = ord(ser.read())
+    data = ser.read(size + 1)
+    return (data[0], data[1:])
+
+h = hal.component("spindle")
+h.newpin("p", hal.HAL_FLOAT, hal.HAL_IN)
+h.newpin("i", hal.HAL_FLOAT, hal.HAL_IN)
+h.newpin("d", hal.HAL_FLOAT, hal.HAL_IN)
+h.newpin("speed", hal.HAL_FLOAT, hal.HAL_IN)
+
+h.ready()
+
+try:
+    s = serial.Serial(port, baudrate=19200)
+    p = 0
+    i = 0
+    d = 0
+    rpm = 0;
+
+    count = 0
+    count2 = 0
+    while 1:
+        cmd, data = read(s)
+        if h["p"] != p or h["i"] != i or h["d"] != d:
+            p = h["p"]
+            i = h["i"]
+            d = h["d"]
+
+            send_stop(s)
+            send_p(s, p)
+            send_i(s, i)
+            send_d(s, d)
+            if cmd == "R":
+                send_start(s)
+
+        count2 += 1
+        if h["speed"] != rpm or count2 == 20:
+            count2 = 0
+            rpm = h["speed"]
+            if rpm == 0:
+                send_stop(s)
+            else:
+                send_start(s)
+
+        if cmd == "R":
+            rpm_reachable, rpm_real, output, pp, ii, dd, integ =  struct.unpack("<HHIffff", data)
+            count = count + 1
+            if count == 2:
+                count = 0
+                send_rpm(s, rpm)
+
+except KeyboardInterrupt:
+    send_stop(s)
+    raise SystemExit
+
