@@ -17,16 +17,16 @@ def do_change(n):
     emcStat.poll()
     curLine = emcStat.current_line
     if n:
-        message = _("Insert tool %d and click continue when ready") % n
+        message = _("Vloz nastroj %d a po odklepnuti okna spust pogram") % n
     else:
-        message = _("Remove the tool and click continue when ready")
+        message = _("Vytahni nastroj ze stroje a odklepni okno")
     app.wm_withdraw()
     app.update()
     if curLine >=0:
         emcCmd.abort()
         h.changed = True    
     app.tk.call("nf_dialog", ".tool_change",
-        _("Tool change"), message, "info", 0, _("Continue"))
+        _("Vymena nastroje"), message, "info", 0, _("Ok"))
     if curLine >=0:
         emcCmd.mode(linuxcnc.MODE_AUTO)
         emcCmd.auto(linuxcnc.AUTO_RUN, curLine + 1)

@@ -4,10 +4,10 @@
 sets spindle-at-speed true
 
 # Temperature measurement
-loadusr -Wn temperature linuxcnc-temperature -n linuxcnc-temperature
-net temperature0  temperature.temp0 => pyvcp.temp.1
-net temperature0  pyvcp.tempmeter.1
-net temperature1  temperature.temp1 => pyvcp.temp.2
+#loadusr -Wn temperature linuxcnc-temperature -n linuxcnc-temperature
+#net temperature0  temperature.temp0 => pyvcp.temp.1
+#net temperature0  pyvcp.tempmeter.1
+#net temperature1  temperature.temp1 => pyvcp.temp.2
 
 # Spindle control
 loadusr -Wn spindle linuxcnc-spindle

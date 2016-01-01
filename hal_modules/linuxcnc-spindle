@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import hal, serial, struct, time
 
-port = "/dev/ttyUSB1"
+port = "/dev/spindle"
 
 def send_stop(ser):
     data = struct.pack('<BBc', 0x80, 0, b'B')
