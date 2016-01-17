@@ -16,7 +16,7 @@ emcStat = linuxcnc.stat();emcCmd = linuxcnc.command()
 def do_change(n):
     emcStat.poll()
     curLine = emcStat.current_line
-    if n:
+    if n != 0:
         message = _("Vloz nastroj %d a po odklepnuti okna spust pogram") % n
     else:
         message = _("Vytahni nastroj ze stroje a odklepni okno")
