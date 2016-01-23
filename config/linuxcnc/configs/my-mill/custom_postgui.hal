@@ -11,10 +11,28 @@ sets spindle-at-speed true
 
 # Spindle control
 loadusr -Wn spindle linuxcnc-spindle
+loadrt mux2 count=1
+loadrt scale count=1
+addf mux2.0  servo-thread
+addf scale.0 servo-thread
+ 
+setp mux2.0.in0 0.5
+setp mux2.0.in1 2.0
+setp scale.0.offset 0.0
+
+net spindle-cmd-rpm-abs => scale.0.in
+net spindle-ratio-signal <= mux2.0.out
+net spindle-ratio-signal => scale.0.gain
+net spindle-ratio-select <= pyvcp.spindle-ratio.dolni
+net spindle-ratio-select => mux2.0.sel
+net spindle-real-rpm-abs <= scale.0.out
+
 net spindle-net.p pyvcp.spindle.p-f => spindle.p
 net spindle-net.i pyvcp.spindle.i-f => spindle.i
 net spindle-net.d pyvcp.spindle.d-f => spindle.d
-net spindle-cmd-rpm-abs spindle.speed
-net spindle-cmd-rpm-abs pyvcp.spindle.show
+
+
+net spindle-real-rpm-abs => spindle.speed
+net spindle-real-rpm-abs => pyvcp.spindle.show
 
 
