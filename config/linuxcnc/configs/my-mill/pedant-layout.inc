@@ -64,7 +64,7 @@ MDI_COMMAND=(debug, example: mdi-08)
 # MDI 9
 MDI_COMMAND=(debug, example: mdi-09)
 # MDI 10
-MDI_COMMAND=(debug, example: mdi-10)
+MDI_COMMAND= O<z_up> call
 # MDI 11
 MDI_COMMAND=(debug, example: mdi-11)
 # MDI 12
