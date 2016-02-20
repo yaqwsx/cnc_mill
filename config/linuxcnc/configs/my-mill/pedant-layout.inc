@@ -46,9 +46,9 @@ reset       = halui.estop.activate
 # MDI 0
 MDI_COMMAND=G0 X0 Y0 Z0
 # MDI 1
-MDI_COMMAND=(debug, example: mdi-01)
+MDI_COMMAND= O<save_ref> call
 # MDI 2
-MDI_COMMAND=(debug, example: mdi-02)
+MDI_COMMAND=O<load_ref> call
 # MDI 3 M110: clears notifications
 MDI_COMMAND=M110
 # MDI 4

@@ -42,46 +42,52 @@ h.newpin("speed", hal.HAL_FLOAT, hal.HAL_IN)
 
 h.ready()
 
-try:
-    s = serial.Serial(port, baudrate=19200)
-    p = 0
-    i = 0
-    d = 0
-    rpm = 0;
+while 1:
+    try:
+        print("Trying to connect...")
+        time.sleep(0.1)
+        s = serial.Serial(port, baudrate=19200)
+        print("Connected")
+        p = 0
+        i = 0
+        d = 0
+        rpm = 0
 
-    count = 0
-    count2 = 0
-    while 1:
-        cmd, data = read(s)
-        if h["p"] != p or h["i"] != i or h["d"] != d:
-            p = h["p"]
-            i = h["i"]
-            d = h["d"]
+        count = 0
+        count2 = 0
+        while 1:
+            cmd, data = read(s)
+            if h["p"] != p or h["i"] != i or h["d"] != d:
+                p = h["p"]
+                i = h["i"]
+                d = h["d"]
 
-            send_stop(s)
-            send_p(s, p)
-            send_i(s, i)
-            send_d(s, d)
-            if cmd == "R":
-                send_start(s)
-
-        count2 += 1
-        if h["speed"] != rpm or count2 == 20:
-            count2 = 0
-            rpm = h["speed"]
-            if rpm == 0:
                 send_stop(s)
-            else:
-                send_start(s)
+                send_p(s, p)
+                send_i(s, i)
+                send_d(s, d)
+                if cmd == "R":
+                    send_start(s)
 
-        if cmd == "R":
-            rpm_reachable, rpm_real, output, pp, ii, dd, integ =  struct.unpack("<HHIffff", data)
-            count = count + 1
-            if count == 2:
-                count = 0
-                send_rpm(s, rpm)
+            count2 += 1
+            if h["speed"] != rpm or count2 == 20:
+                count2 = 0
+                rpm = h["speed"]
+                if rpm == 0:
+                    send_stop(s)
+                else:
+                    send_start(s)
 
-except KeyboardInterrupt:
-    send_stop(s)
-    raise SystemExit
+            if cmd == "R":
+                rpm_reachable, rpm_real, output, pp, ii, dd, integ =  struct.unpack("<HHIffff", data)
+                count = count + 1
+                if count == 2:
+                    count = 0
+                    send_rpm(s, rpm)
+    except serial.SerialException:
+        print("Communication error")
+    except KeyboardInterrupt:
+        print("Exiting")
+        send_stop(s)
+        raise SystemExit
 

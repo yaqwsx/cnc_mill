@@ -1,10 +1,7 @@
-O<tool_len> sub
+O<tool_len_man> sub
 
-#<test_Z> = -465.219
+#<test_Z> = -385.2
 
-( Probe the tool len )
-#100 = #<_feed>
-G38.2 F100 Z[#5422 - 50]
 ( Compute machine coords and store in #101-#110 )
 G49
 #100 = [[[#5220 - 1] * 20] + 5220]
@@ -22,7 +19,6 @@ G49
 G10 L1 P#5400 Z[#103 - #<test_Z>]
 G43
 G0 Z[#5422 + 30]
-F#100
 
 
-O<tool_len> endsub
+O<tool_len_man> endsub
