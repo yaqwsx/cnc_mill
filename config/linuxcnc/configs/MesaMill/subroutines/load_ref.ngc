@@ -1,0 +1,4 @@
+O<load_ref> sub
+G0 G53 X#<_x_pos_save> Y#<_y_pos_save>
+
+O<load_ref> endsub

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+	<label><text>"Převod vřetene"</text></label>
+	<radiobutton>
+		<choices>["horni", "dolni"]</choices>
+		<halpin>"spindle-ratio"</halpin>
+		<initval>0</initval>
+	</radiobutton>
+
+	<label><text>"Teplota 1"</text></label>
+	<number>
+		<halpin>"temp.1"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f °C"</format>
+	</number>
+
+	<label><text>"Teplota 2"</text></label>
+	<number>
+		<halpin>"temp.2"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f °C"</format>
+	</number>
+
+	<!--<meter>
+	    <halpin>"tempmeter.1"</halpin>
+	    <text>"Ložiska"</text>
+	    <subtext>"°C"</subtext>
+	    <size>200</size>
+	    <min_>0</min_>
+	    <max_>100</max_>
+	    <majorscale>10</majorscale>
+	    <minorscale>2</minorscale>
+	    <region1>(50,70,"yellow")</region1>
+	    <region2>(0,50,"green")</region2>
+	    <region3>(70,100,"red")</region3>
+	</meter>-->
+
+	<label><text>"P"</text></label>
+	<scale>
+	    <font>("Helvetica",16)</font>
+	    <width>"25"</width>
+	    <halpin>"spindle.p"</halpin>
+	    <resolution>10</resolution>
+	    <orient>HORIZONTAL</orient>
+	    <initval>1900</initval>
+	    <min_>0</min_>
+	    <max_>5000</max_>
+	</scale>
+
+	<label><text>"I"</text></label>
+	<scale>
+	    <font>("Helvetica",16)</font>
+	    <width>"25"</width>
+	    <halpin>"spindle.i"</halpin>
+	    <resolution>10</resolution>
+	    <orient>HORIZONTAL</orient>
+	    <initval>3500</initval>
+	    <min_>0</min_>
+	    <max_>5000</max_>
+	</scale>
+
+	<label><text>"D"</text></label>
+	<scale>
+	    <font>("Helvetica",16)</font>
+	    <width>"25"</width>
+	    <halpin>"spindle.d"</halpin>
+	    <resolution>10</resolution>
+	    <orient>HORIZONTAL</orient>
+	    <initval>1500</initval>
+	    <min_>0</min_>
+	    <max_>5000</max_>
+	</scale>
+
+	<label><text>"Otáčky vřetena"</text></label>
+	<number>
+		<halpin>"spindle.show"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f RPM"</format>
+	</number>
+
+<!--
+	<label>
+		<text>"Výměna nástroje"</text>
+		<font>("Helvetica", 24)</font>
+	</label>
+	<rectled>
+		<halpin>"tool_change"</halpin>
+		<height>"50"</height>
+		<width>"250"</width>
+		<on_color>"red"</on_color>
+		<off_color>"gray"</off_color>
+	</rectled>
+	<button>
+		<halpin>"tool_change_done"</halpin>
+		<text>"Nástroj vyměněn"</text>
+		<disable_pin>True</disable_pin>
+	</button>
+-->
+
+
+</pyvcp>
