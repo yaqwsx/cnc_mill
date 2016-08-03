@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BF5169A0-9AF2-43D9-BC7A-0C3905824FFE}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeIncludeSearchPath>D:\mcu\libs\stm32plus\lib\include;D:\mcu\libs\stm32plus\lib;D:\mcu\libs\atoms\include;.;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Device\ST\STM32F0xx\Include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\RTOS;c:\sysgcc\arm-eabi\arm-eabi\include\c++\5.3.0;c:\sysgcc\arm-eabi\arm-eabi\include\c++\5.3.0\arm-eabi\thumb\cortex_m0;c:\sysgcc\arm-eabi\arm-eabi\include\c++\5.3.0\backward;c:\sysgcc\arm-eabi\lib\gcc\arm-eabi\5.3.0\include;c:\sysgcc\arm-eabi\lib\gcc\arm-eabi\5.3.0\include-fixed;c:\sysgcc\arm-eabi\arm-eabi\sys-include;c:\sysgcc\arm-eabi\arm-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\stm32_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)dc_servo_driver-Debug.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeIncludeSearchPath>.;c:\sysgcc\arm-eabi\arm-eabi\include\c++\5.3.0;c:\sysgcc\arm-eabi\arm-eabi\include\c++\5.3.0\arm-eabi\thumb\cortex_m0;c:\sysgcc\arm-eabi\arm-eabi\include\c++\5.3.0\backward;c:\sysgcc\arm-eabi\lib\gcc\arm-eabi\5.3.0\include;c:\sysgcc\arm-eabi\lib\gcc\arm-eabi\5.3.0\include-fixed;c:\sysgcc\arm-eabi\arm-eabi\sys-include;c:\sysgcc\arm-eabi\arm-eabi\include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Device\ST\STM32F0xx\Include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\RTOS;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\stm32_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)dc_servo_driver-Release.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\StartupFiles\startup_stm32f030x6.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_can.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crs.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c" />
+    <ClCompile Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c" />
+    <ClCompile Include="librarary_hack.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="system_stm32f0xx.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="debug.mak" />
+    <None Include="Makefile" />
+    <None Include="release.mak" />
+    <None Include="stm32.mak" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Device\ST\STM32F0xx\Include\stm32f0xx.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Device\ST\STM32F0xx\Include\system_stm32f0xx.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\arm_common_tables.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\arm_const_structs.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\arm_math.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cm0.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cm0plus.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cm3.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cm4.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cm4_simd.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cmFunc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_cmInstr.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_sc000.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\Include\core_sc300.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\CMSIS_StdPeriph\RTOS\cmsis_os.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_adc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_can.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_cec.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_comp.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_crc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_crs.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_dac.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_dbgmcu.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_dma.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_exti.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_flash.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_gpio.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_i2c.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_iwdg.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_misc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_pwr.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_rcc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_rtc.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_spi.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_syscfg.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_tim.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_usart.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F0xxxx\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_wwdg.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<MemoryUtilizationReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FLASH>
+    <Used>10828</Used>
+    <Total>16384</Total>
+  </FLASH>
+  <RAM>
+    <Used>268</Used>
+    <Total>4096</Total>
+  </RAM>
+</MemoryUtilizationReport>
