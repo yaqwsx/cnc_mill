@@ -1,4 +1,4 @@
-update=07.08.2016 12:05:47
+update=07.08.2016 16:09:58
 version=1
 last_client=kicad
 [pcbnew]
@@ -148,3 +148,4 @@ NetFmtName=
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=50
+ERC_TestSimilarLabels=1

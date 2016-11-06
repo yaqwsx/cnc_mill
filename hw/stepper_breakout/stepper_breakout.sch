@@ -660,8 +660,15 @@ $EndComp
 NoConn ~ 8950 3250
 NoConn ~ 8950 3350
 Connection ~ 9050 4150
-NoConn ~ 8950 4450
-NoConn ~ 8950 4350
-NoConn ~ 8950 4250
-NoConn ~ 8950 4150
+Wire Wire Line
+	8950 4150 9050 4150
+Wire Wire Line
+	8950 4250 9050 4250
+Connection ~ 9050 4250
+Wire Wire Line
+	8950 4350 9050 4350
+Connection ~ 9050 4350
+Wire Wire Line
+	8950 4450 9050 4450
+Connection ~ 9050 4450
 $EndSCHEMATC
