@@ -1,0 +1,189 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Q_NMOS_GDS Q1
+U 1 1 5820A9F4
+P 5300 3700
+AR Path="/5820A943/5820A9F4" Ref="Q1"  Part="1" 
+AR Path="/5820B987/5820A9F4" Ref="Q4"  Part="1" 
+AR Path="/5820B7AE/5820A9F4" Ref="Q2"  Part="1" 
+AR Path="/5820B8AA/5820A9F4" Ref="Q3"  Part="1" 
+AR Path="/5820BC58/5820A9F4" Ref="Q5"  Part="1" 
+F 0 "Q1" H 5600 3750 50  0000 R CNN
+F 1 "Q_NMOS_GDS" H 5950 3650 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 5500 3800 50  0001 C CNN
+F 3 "" H 5300 3700 50  0000 C CNN
+	1    5300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D1
+U 1 1 5820AAE2
+P 5400 3200
+AR Path="/5820A943/5820AAE2" Ref="D1"  Part="1" 
+AR Path="/5820B987/5820AAE2" Ref="D4"  Part="1" 
+AR Path="/5820B7AE/5820AAE2" Ref="D2"  Part="1" 
+AR Path="/5820B8AA/5820AAE2" Ref="D3"  Part="1" 
+AR Path="/5820BC58/5820AAE2" Ref="D5"  Part="1" 
+F 0 "D1" H 5400 3300 50  0000 C CNN
+F 1 "D" H 5400 3100 50  0000 C CNN
+F 2 "Diodes_SMD:SOD-523" H 5400 3200 50  0001 C CNN
+F 3 "" H 5400 3200 50  0000 C CNN
+	1    5400 3200
+	0    1    1    0   
+$EndComp
+$Comp
+L +24V #PWR06
+U 1 1 5820AB8B
+P 5400 3050
+AR Path="/5820A943/5820AB8B" Ref="#PWR06"  Part="1" 
+AR Path="/5820B987/5820AB8B" Ref="#PWR015"  Part="1" 
+AR Path="/5820B7AE/5820AB8B" Ref="#PWR09"  Part="1" 
+AR Path="/5820B8AA/5820AB8B" Ref="#PWR012"  Part="1" 
+AR Path="/5820BC58/5820AB8B" Ref="#PWR018"  Part="1" 
+F 0 "#PWR018" H 5400 2900 50  0001 C CNN
+F 1 "+24V" H 5400 3190 50  0000 C CNN
+F 2 "" H 5400 3050 50  0000 C CNN
+F 3 "" H 5400 3050 50  0000 C CNN
+	1    5400 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 5820ABA5
+P 5400 3900
+AR Path="/5820A943/5820ABA5" Ref="#PWR07"  Part="1" 
+AR Path="/5820B987/5820ABA5" Ref="#PWR016"  Part="1" 
+AR Path="/5820B7AE/5820ABA5" Ref="#PWR010"  Part="1" 
+AR Path="/5820B8AA/5820ABA5" Ref="#PWR013"  Part="1" 
+AR Path="/5820BC58/5820ABA5" Ref="#PWR019"  Part="1" 
+F 0 "#PWR019" H 5400 3650 50  0001 C CNN
+F 1 "GND" H 5400 3750 50  0000 C CNN
+F 2 "" H 5400 3900 50  0000 C CNN
+F 3 "" H 5400 3900 50  0000 C CNN
+	1    5400 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 5820ABBF
+P 5100 3850
+AR Path="/5820A943/5820ABBF" Ref="R4"  Part="1" 
+AR Path="/5820B987/5820ABBF" Ref="R10"  Part="1" 
+AR Path="/5820B7AE/5820ABBF" Ref="R6"  Part="1" 
+AR Path="/5820B8AA/5820ABBF" Ref="R8"  Part="1" 
+AR Path="/5820BC58/5820ABBF" Ref="R12"  Part="1" 
+F 0 "R4" V 5180 3850 50  0000 C CNN
+F 1 "10k" V 5100 3850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 5030 3850 50  0001 C CNN
+F 3 "" H 5100 3850 50  0000 C CNN
+	1    5100 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 5820AC12
+P 4850 3700
+AR Path="/5820A943/5820AC12" Ref="R3"  Part="1" 
+AR Path="/5820B987/5820AC12" Ref="R9"  Part="1" 
+AR Path="/5820B7AE/5820AC12" Ref="R5"  Part="1" 
+AR Path="/5820B8AA/5820AC12" Ref="R7"  Part="1" 
+AR Path="/5820BC58/5820AC12" Ref="R11"  Part="1" 
+F 0 "R3" V 4930 3700 50  0000 C CNN
+F 1 "4R7" V 4850 3700 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4780 3700 50  0001 C CNN
+F 3 "" H 4850 3700 50  0000 C CNN
+	1    4850 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5000 3700 5100 3700
+$Comp
+L GND #PWR08
+U 1 1 5820AC6A
+P 5100 4000
+AR Path="/5820A943/5820AC6A" Ref="#PWR08"  Part="1" 
+AR Path="/5820B987/5820AC6A" Ref="#PWR017"  Part="1" 
+AR Path="/5820B7AE/5820AC6A" Ref="#PWR011"  Part="1" 
+AR Path="/5820B8AA/5820AC6A" Ref="#PWR014"  Part="1" 
+AR Path="/5820BC58/5820AC6A" Ref="#PWR020"  Part="1" 
+F 0 "#PWR020" H 5100 3750 50  0001 C CNN
+F 1 "GND" H 5100 3850 50  0000 C CNN
+F 2 "" H 5100 4000 50  0000 C CNN
+F 3 "" H 5100 4000 50  0000 C CNN
+	1    5100 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 3350 5400 3500
+Text HLabel 5550 3050 2    60   Output ~ 0
+OUT+
+Text HLabel 5550 3350 2    60   Output ~ 0
+OUT-
+Wire Wire Line
+	5050 3350 5550 3350
+Wire Wire Line
+	5050 3050 5550 3050
+$Comp
+L C C1
+U 1 1 5820ADDC
+P 5050 3200
+AR Path="/5820A943/5820ADDC" Ref="C1"  Part="1" 
+AR Path="/5820B987/5820ADDC" Ref="C4"  Part="1" 
+AR Path="/5820B7AE/5820ADDC" Ref="C2"  Part="1" 
+AR Path="/5820B8AA/5820ADDC" Ref="C3"  Part="1" 
+AR Path="/5820BC58/5820ADDC" Ref="C5"  Part="1" 
+F 0 "C1" H 5075 3300 50  0000 L CNN
+F 1 "100n" H 5075 3100 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 5088 3050 50  0001 C CNN
+F 3 "" H 5050 3200 50  0000 C CNN
+	1    5050 3200
+	1    0    0    -1  
+$EndComp
+Connection ~ 5400 3050
+Connection ~ 5400 3350
+Text HLabel 4700 3700 0    60   Input ~ 0
+IN
+$EndSCHEMATC

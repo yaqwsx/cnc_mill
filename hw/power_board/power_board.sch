@@ -1,0 +1,351 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 4600 2700 1000 200 
+U 5820A943
+F0 "R_SPINDLE" 60
+F1 "relay_control.sch" 60
+F2 "OUT+" O R 5600 2750 60 
+F3 "OUT-" O R 5600 2850 60 
+F4 "IN" I L 4600 2800 60 
+$EndSheet
+$Comp
+L CONN_01X02 P2
+U 1 1 5820B381
+P 5800 2800
+F 0 "P2" H 5800 2950 50  0000 C CNN
+F 1 "SPINDLE_REALY" V 5900 2800 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 5800 2800 50  0001 C CNN
+F 3 "" H 5800 2800 50  0000 C CNN
+	1    5800 2800
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 4600 3350 1000 200 
+U 5820B7AE
+F0 "R_SPINDLE_SOFT" 60
+F1 "relay_control.sch" 60
+F2 "OUT+" O R 5600 3400 60 
+F3 "OUT-" O R 5600 3500 60 
+F4 "IN" I L 4600 3450 60 
+$EndSheet
+$Sheet
+S 4600 3900 1000 200 
+U 5820B8AA
+F0 "R_SPINDLE_DIS" 60
+F1 "relay_control.sch" 60
+F2 "OUT+" O R 5600 3950 60 
+F3 "OUT-" O R 5600 4050 60 
+F4 "IN" I L 4600 4000 60 
+$EndSheet
+$Sheet
+S 4600 4450 1000 200 
+U 5820B987
+F0 "R_STEPPER" 60
+F1 "relay_control.sch" 60
+F2 "OUT+" O R 5600 4500 60 
+F3 "OUT-" O R 5600 4600 60 
+F4 "IN" I L 4600 4550 60 
+$EndSheet
+$Sheet
+S 4600 5000 1000 200 
+U 5820BC58
+F0 "R_ESTOP" 60
+F1 "relay_control.sch" 60
+F2 "OUT+" O R 5600 5050 60 
+F3 "OUT-" O R 5600 5150 60 
+F4 "IN" I L 4600 5100 60 
+$EndSheet
+$Comp
+L CONN_01X02 P6
+U 1 1 5820BF40
+P 5800 5100
+F 0 "P6" H 5800 5250 50  0000 C CNN
+F 1 "STOP_RELAY" V 5900 5100 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 5800 5100 50  0001 C CNN
+F 3 "" H 5800 5100 50  0000 C CNN
+	1    5800 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P5
+U 1 1 5820C26C
+P 5800 4550
+F 0 "P5" H 5800 4700 50  0000 C CNN
+F 1 "STEPPER_RELAY" V 5900 4550 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 5800 4550 50  0001 C CNN
+F 3 "" H 5800 4550 50  0000 C CNN
+	1    5800 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P3
+U 1 1 5820CB70
+P 5800 3450
+F 0 "P3" H 5800 3600 50  0000 C CNN
+F 1 "SOFT_RELAY" V 5900 3450 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 5800 3450 50  0001 C CNN
+F 3 "" H 5800 3450 50  0000 C CNN
+	1    5800 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P4
+U 1 1 5820CCD1
+P 5800 4000
+F 0 "P4" H 5800 4150 50  0000 C CNN
+F 1 "DIS_RELAY" V 5900 4000 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 5800 4000 50  0001 C CNN
+F 3 "" H 5800 4000 50  0000 C CNN
+	1    5800 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P7
+U 1 1 5820DA12
+P 7900 4150
+F 0 "P7" H 7900 4300 50  0000 C CNN
+F 1 "SPINDLE_RPWR_IN" V 8000 4150 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 7900 4150 50  0001 C CNN
+F 3 "" H 7900 4150 50  0000 C CNN
+	1    7900 4150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P10
+U 1 1 5820E266
+P 8900 4650
+F 0 "P10" H 8900 4800 50  0000 C CNN
+F 1 "SPINDLE_C_BLOCK" V 9000 4650 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 8900 4650 50  0001 C CNN
+F 3 "" H 8900 4650 50  0000 C CNN
+	1    8900 4650
+	0    -1   1    0   
+$EndComp
+$Comp
+L CONN_01X02 P8
+U 1 1 5820E480
+P 8300 3650
+F 0 "P8" H 8300 3800 50  0000 C CNN
+F 1 "SOFT_RELAY_OUT" V 8400 3650 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 8300 3650 50  0001 C CNN
+F 3 "" H 8300 3650 50  0000 C CNN
+	1    8300 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X02 P9
+U 1 1 5820E60D
+P 8900 3500
+F 0 "P9" H 8900 3650 50  0000 C CNN
+F 1 "DIS_RELAY_OUT" V 9000 3500 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 8900 3500 50  0001 C CNN
+F 3 "" H 8900 3500 50  0000 C CNN
+	1    8900 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R1
+U 1 1 5820FAC1
+P 8300 4000
+F 0 "R1" V 8380 4000 50  0000 C CNN
+F 1 "50R" V 8300 4000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM30mm" V 8230 4000 50  0001 C CNN
+F 3 "" H 8300 4000 50  0000 C CNN
+	1    8300 4000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8100 4100 8150 4100
+Wire Wire Line
+	8150 4100 8150 3850
+Wire Wire Line
+	8150 3850 8250 3850
+Wire Wire Line
+	8350 3850 8450 3850
+Wire Wire Line
+	8450 3850 8450 4100
+Wire Wire Line
+	8450 4100 9500 4100
+Wire Wire Line
+	8850 3700 8850 4450
+Connection ~ 8850 4100
+Wire Wire Line
+	8950 4000 8950 4450
+$Comp
+L R R2
+U 1 1 58210753
+P 8950 3850
+F 0 "R2" V 9030 3850 50  0000 C CNN
+F 1 "1k" V 8950 3850 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM30mm" V 8880 3850 50  0001 C CNN
+F 3 "" H 8950 3850 50  0000 C CNN
+	1    8950 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P12
+U 1 1 582114A6
+P 9700 4150
+F 0 "P12" H 9700 4300 50  0000 C CNN
+F 1 "SPINDLE_PWR_OUT" V 9800 4150 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 9700 4150 50  0001 C CNN
+F 3 "" H 9700 4150 50  0000 C CNN
+	1    9700 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 4200 9500 4200
+Connection ~ 8950 4200
+Text Label 9050 4100 0    60   ~ 0
+SPINDLE+
+Text Label 9050 4200 0    60   ~ 0
+SPINDLE-
+$Comp
+L CONN_01X02 P11
+U 1 1 58215219
+P 9200 2700
+F 0 "P11" H 9200 2850 50  0000 C CNN
+F 1 "POWER_IN" V 9300 2700 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 9200 2700 50  0001 C CNN
+F 3 "" H 9200 2700 50  0000 C CNN
+	1    9200 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L +24V #PWR01
+U 1 1 582153B0
+P 9000 2650
+F 0 "#PWR01" H 9000 2500 50  0001 C CNN
+F 1 "+24V" H 9000 2790 50  0000 C CNN
+F 2 "" H 9000 2650 50  0000 C CNN
+F 3 "" H 9000 2650 50  0000 C CNN
+	1    9000 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 582154AE
+P 9000 2750
+F 0 "#PWR02" H 9000 2500 50  0001 C CNN
+F 1 "GND" H 9000 2600 50  0000 C CNN
+F 2 "" H 9000 2750 50  0000 C CNN
+F 3 "" H 9000 2750 50  0000 C CNN
+	1    9000 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG03
+U 1 1 58215536
+P 8800 2650
+F 0 "#FLG03" H 8800 2745 50  0001 C CNN
+F 1 "PWR_FLAG" H 8800 2830 50  0000 C CNN
+F 2 "" H 8800 2650 50  0000 C CNN
+F 3 "" H 8800 2650 50  0000 C CNN
+	1    8800 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L PWR_FLAG #FLG04
+U 1 1 582155D6
+P 8800 2850
+F 0 "#FLG04" H 8800 2945 50  0001 C CNN
+F 1 "PWR_FLAG" H 8800 3030 50  0000 C CNN
+F 2 "" H 8800 2850 50  0000 C CNN
+F 3 "" H 8800 2850 50  0000 C CNN
+	1    8800 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9000 2750 8800 2750
+Wire Wire Line
+	8800 2750 8800 2850
+Wire Wire Line
+	8800 2650 9000 2650
+$Comp
+L CONN_01X06 P1
+U 1 1 58216A0A
+P 1550 3700
+F 0 "P1" H 1550 4050 50  0000 C CNN
+F 1 "SIGNAL_IN" V 1650 3700 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-6pol" H 1550 3700 50  0001 C CNN
+F 3 "" H 1550 3700 50  0000 C CNN
+	1    1550 3700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 5821722D
+P 1750 3450
+F 0 "#PWR05" H 1750 3200 50  0001 C CNN
+F 1 "GND" H 1750 3300 50  0000 C CNN
+F 2 "" H 1750 3450 50  0000 C CNN
+F 3 "" H 1750 3450 50  0000 C CNN
+	1    1750 3450
+	-1   0    0    1   
+$EndComp
+Text GLabel 1750 3550 2    60   Input ~ 0
+R_ESTOP
+Text GLabel 1750 3650 2    60   Input ~ 0
+R_SPINDLE
+Text GLabel 1750 3750 2    60   Input ~ 0
+R_SPINDLE_SOFT
+Text GLabel 1750 3850 2    60   Input ~ 0
+R_SPINDLE_DIS
+Text GLabel 1750 3950 2    60   Input ~ 0
+R_STEPPER
+Text GLabel 4600 5100 0    60   Input ~ 0
+R_ESTOP
+Text GLabel 4600 4550 0    60   Input ~ 0
+R_STEPPER
+Text GLabel 4600 4000 0    60   Input ~ 0
+R_SPINDLE_DIS
+Text GLabel 4600 3450 0    60   Input ~ 0
+R_SPINDLE_SOFT
+Text GLabel 4600 2800 0    60   Input ~ 0
+R_SPINDLE
+Connection ~ 8450 4000
+Connection ~ 8150 4000
+$EndSCHEMATC
