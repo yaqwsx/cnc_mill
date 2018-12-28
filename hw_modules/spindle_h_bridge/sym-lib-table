@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name spindle_h_bridge-rescue)(type Legacy)(uri ${KIPRJMOD}/spindle_h_bridge-rescue.lib)(options "")(descr ""))
+)
