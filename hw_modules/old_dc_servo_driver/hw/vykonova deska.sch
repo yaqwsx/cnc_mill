@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -6360,14 +6361,14 @@ grid 5.6 mm</description>
 <part name="SUPPLY1" library="supply2" deviceset="+15V" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="C1" library="resistor" deviceset="C-EU" device="102-043X133" value="10n 1kV"/>
-<part name="D3" library="adafruit" deviceset="1N4004" device="" value="15A10G"/>
+<part name="D3" library="adafruit" deviceset="1N4004" device="" value="STTH15R06D"/>
 <part name="C2" library="resistor" deviceset="C-EU" device="102-043X133" value="10n 1kV"/>
 <part name="C3" library="resistor" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="GNDI3" library="supply1" deviceset="GNDI" device=""/>
 <part name="R6" library="resistor" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="X2" library="con-wago-508" deviceset="W237-2N" device=""/>
-<part name="D2" library="adafruit" deviceset="1N4004" device="" value="15A10G"/>
+<part name="D2" library="adafruit" deviceset="1N4004" device="" value="STTH15R06D"/>
 <part name="X1" library="con-wago-508" deviceset="W237-3N" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="VCC" device="" value="+180V"/>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>

@@ -1,11 +1,26 @@
-EESchema-LIBRARY Version 2.3
+EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# +15V
+# Mechanical_MountingHole
 #
-DEF +15V #PWR 0 0 Y Y 1 F P
+DEF Mechanical_MountingHole H 0 40 Y Y 1 F N
+F0 "H" 0 200 50 H V C CNN
+F1 "Mechanical_MountingHole" 0 125 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*
+$ENDFPLIST
+DRAW
+C 0 0 50 0 1 50 N
+ENDDRAW
+ENDDEF
+#
+# power_+15V
+#
+DEF power_+15V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "+15V" 0 140 50 H V C CNN
+F1 "power_+15V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -16,11 +31,11 @@ X +15V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# +5V
+# power_+5V
 #
-DEF +5V #PWR 0 0 Y Y 1 F P
+DEF power_+5V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "+5V" 0 140 50 H V C CNN
+F1 "power_+5V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -31,35 +46,54 @@ X +5V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# 1N6263
+# power_GND
 #
-DEF 1N6263 D 0 40 N N 1 F N
-F0 "D" 0 100 50 H V C CNN
-F1 "1N6263" 0 -100 50 H V C CNN
-F2 "Diodes_THT:D_DO-35_SOD27_Horizontal_RM10" 0 -175 50 H I C CNN
+DEF power_GND #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
-ALIAS BAT41 BAT42 BAT43 BAT46 BAT48RL BAT85 BAT86S BAT86
-$FPLIST
- D*SOD23*
- D*DO?35*
-$ENDFPLIST
 DRAW
-P 2 0 1 0 50 0 -50 0 N
-P 4 0 1 8 50 50 50 -50 -50 0 50 50 N
-P 6 0 1 8 -75 25 -75 50 -50 50 -50 -50 -25 -50 -25 -25 N
-X K 1 -150 0 100 R 50 50 1 1 P
-X A 2 150 0 100 L 50 50 1 1 P
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# ADuM1200AR
+# power_GNDD
 #
-DEF ADuM1200AR U 0 40 Y Y 1 F N
+DEF power_GNDD #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "power_GNDD" 0 -125 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -50 -60 50 -80 0 1 10 F
+P 2 0 1 0 0 0 0 -60 N
+X GNDD 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# power_VCC
+#
+DEF power_VCC #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_VCC" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 0 75 25 0 1 0 N
+P 2 0 1 0 0 0 0 50 N
+X VCC 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# spindle_h_bridge-rescue_ADuM1200AR
+#
+DEF spindle_h_bridge-rescue_ADuM1200AR U 0 40 Y Y 1 F N
 F0 "U" -350 400 50 H V L CNN
-F1 "ADuM1200AR" -50 400 50 H V L CNN
+F1 "spindle_h_bridge-rescue_ADuM1200AR" -50 400 50 H V L CNN
 F2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" 0 0 50 H I C CIN
 F3 "" 0 0 50 H I C CNN
-ALIAS ADuM1200BR ADuM1200CR ADuM1200WS ADuM1200WT ADuM1200WU
 $FPLIST
  SO*
 $ENDFPLIST
@@ -76,11 +110,31 @@ X VDD2 8 450 250 100 L 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# C
+# spindle_h_bridge-rescue_BAT42
 #
-DEF C C 0 10 N Y 1 F N
+DEF spindle_h_bridge-rescue_BAT42 D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "spindle_h_bridge-rescue_BAT42" 0 -100 50 H V C CNN
+F2 "Diodes_THT:D_DO-35_SOD27_Horizontal_RM10" 0 -175 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ D*SOD23*
+ D*DO?35*
+$ENDFPLIST
+DRAW
+P 2 0 1 0 50 0 -50 0 N
+P 4 0 1 8 50 50 50 -50 -50 0 50 50 N
+P 6 0 1 8 -75 25 -75 50 -50 50 -50 -50 -25 -50 -25 -25 N
+X K 1 -150 0 100 R 50 50 1 1 P
+X A 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# spindle_h_bridge-rescue_C
+#
+DEF spindle_h_bridge-rescue_C C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "C" 25 -100 50 H V L CNN
+F1 "spindle_h_bridge-rescue_C" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -94,11 +148,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X02
+# spindle_h_bridge-rescue_CONN_01X02
 #
-DEF CONN_01X02 J 0 40 Y N 1 F N
+DEF spindle_h_bridge-rescue_CONN_01X02 J 0 40 Y N 1 F N
 F0 "J" 0 150 50 H V C CNN
-F1 "CONN_01X02" 100 0 50 V V C CNN
+F1 "spindle_h_bridge-rescue_CONN_01X02" 100 0 50 V V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -116,11 +170,11 @@ X P2 2 -200 -50 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X04
+# spindle_h_bridge-rescue_CONN_01X04
 #
-DEF CONN_01X04 J 0 40 Y N 1 F N
+DEF spindle_h_bridge-rescue_CONN_01X04 J 0 40 Y N 1 F N
 F0 "J" 0 250 50 H V C CNN
-F1 "CONN_01X04" 100 0 50 V V C CNN
+F1 "spindle_h_bridge-rescue_CONN_01X04" 100 0 50 V V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -142,11 +196,11 @@ X P4 4 -200 -150 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CP
+# spindle_h_bridge-rescue_CP
 #
-DEF CP C 0 10 N Y 1 F N
+DEF spindle_h_bridge-rescue_CP C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "CP" 25 -100 50 H V L CNN
+F1 "spindle_h_bridge-rescue_CP" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -165,11 +219,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# D_Schottky
+# spindle_h_bridge-rescue_D_Schottky
 #
-DEF D_Schottky D 0 40 N N 1 F N
+DEF spindle_h_bridge-rescue_D_Schottky D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "D_Schottky" 0 -100 50 H V C CNN
+F1 "spindle_h_bridge-rescue_D_Schottky" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -188,11 +242,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# D_Zener
+# spindle_h_bridge-rescue_D_Zener
 #
-DEF D_Zener D 0 40 N N 1 F N
+DEF spindle_h_bridge-rescue_D_Zener D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "D_Zener" 0 -100 50 H V C CNN
+F1 "spindle_h_bridge-rescue_D_Zener" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -211,62 +265,13 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# FAN7393A
+# spindle_h_bridge-rescue_LM1117-5.0
 #
-DEF FAN7393A U 0 40 Y Y 1 F N
-F0 "U" 0 -350 60 H V C CNN
-F1 "FAN7393A" 0 350 60 H V C CNN
-F2 "" 0 -200 60 H I C CNN
-F3 "" 0 -200 60 H I C CNN
-DRAW
-S -200 300 200 -300 0 1 0 f
-X IN 1 -400 150 200 R 50 50 1 1 I
-X ~SD 2 -400 50 200 R 50 50 1 1 I
-X VSS 3 -400 -150 200 R 50 50 1 1 W
-X DT 4 -400 -50 200 R 50 50 1 1 P
-X COM 5 400 -250 200 L 50 50 1 1 W
-X LO 6 400 -150 200 L 50 50 1 1 O
-X VDD 7 400 250 200 L 50 50 1 1 W
-X Vs 11 400 -50 200 L 50 50 1 1 P
-X HO 12 400 50 200 L 50 50 1 1 O
-X Vb 13 400 150 200 L 50 50 1 1 O
-ENDDRAW
-ENDDEF
-#
-# GND
-#
-DEF GND #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -250 50 H I C CNN
-F1 "GND" 0 -150 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
-X GND 1 0 0 0 D 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
-# GNDD
-#
-DEF GNDD #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -250 50 H I C CNN
-F1 "GNDD" 0 -150 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
-X GNDD 1 0 0 0 D 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
-# LM1117-ADJ
-#
-DEF LM1117-ADJ U 0 30 Y Y 1 F N
+DEF spindle_h_bridge-rescue_LM1117-5.0 U 0 30 Y Y 1 F N
 F0 "U" 100 -250 50 H V C CNN
-F1 "LM1117-ADJ" 0 250 50 H V C CNN
+F1 "spindle_h_bridge-rescue_LM1117-5.0" 0 250 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
-ALIAS LM1117-1.8 LM1117-2.5 LM1117-3.3 LM1117-5.0
 $FPLIST
  SOT-223*
  TO-263*
@@ -281,11 +286,11 @@ X VO 4 300 0 100 L 50 50 1 1 w N
 ENDDRAW
 ENDDEF
 #
-# Q_NIGBT_GCE
+# spindle_h_bridge-rescue_Q_NIGBT_GCE
 #
-DEF Q_NIGBT_GCE Q 0 0 Y N 1 F N
+DEF spindle_h_bridge-rescue_Q_NIGBT_GCE Q 0 0 Y N 1 F N
 F0 "Q" 200 50 50 H V L CNN
-F1 "Q_NIGBT_GCE" 200 -50 50 H V L CNN
+F1 "spindle_h_bridge-rescue_Q_NIGBT_GCE" 200 -50 50 H V L CNN
 F2 "" 200 100 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -305,11 +310,11 @@ X E 3 100 -200 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# R
+# spindle_h_bridge-rescue_R
 #
-DEF R R 0 0 N Y 1 F N
+DEF spindle_h_bridge-rescue_R R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
-F1 "R" 0 0 50 V V C CNN
+F1 "spindle_h_bridge-rescue_R" 0 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -323,17 +328,25 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# VCC
+# yaqwsx_FAN7393A
 #
-DEF VCC #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -150 50 H I C CNN
-F1 "VCC" 0 150 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
+DEF yaqwsx_FAN7393A U 0 40 Y Y 1 F N
+F0 "U" 0 -350 60 H V C CNN
+F1 "yaqwsx_FAN7393A" 0 350 60 H V C CNN
+F2 "" 0 -200 60 H I C CNN
+F3 "" 0 -200 60 H I C CNN
 DRAW
-C 0 75 25 0 1 0 N
-P 2 0 1 0 0 0 0 50 N
-X VCC 1 0 0 0 U 50 50 1 1 W N
+S -200 300 200 -300 0 1 0 f
+X IN 1 -400 150 200 R 50 50 1 1 I
+X Vs 11 400 -50 200 L 50 50 1 1 P
+X HO 12 400 50 200 L 50 50 1 1 O
+X Vb 13 400 150 200 L 50 50 1 1 O
+X ~SD 2 -400 50 200 R 50 50 1 1 I
+X VSS 3 -400 -150 200 R 50 50 1 1 W
+X DT 4 -400 -50 200 R 50 50 1 1 P
+X COM 5 400 -250 200 L 50 50 1 1 W
+X LO 6 400 -150 200 L 50 50 1 1 O
+X VDD 7 400 250 200 L 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
