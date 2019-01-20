@@ -7,7 +7,7 @@ addf or2.0 servo-thread
 
 net tool_probe => or2.0.in0
 net piece_probe => or2.0.in1
-net probe-in <= or2.0.out
+# net probe-in <= or2.0.out
 
 # Net power signals
 loadrt timedelay count=4

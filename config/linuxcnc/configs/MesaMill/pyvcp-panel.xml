@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <pyvcp>
-	<label><text>"Převod vřetene"</text></label>
+	<label><width>"35"</width><text>"Převod vřetene"</text></label>
 	<radiobutton>
 		<choices>["horni", "dolni"]</choices>
 		<halpin>"spindle-ratio"</halpin>
@@ -35,48 +35,33 @@
 	    <region3>(70,100,"red")</region3>
 	</meter>-->
 
-	<label><text>"P"</text></label>
-	<scale>
-	    <font>("Helvetica",16)</font>
-	    <width>"25"</width>
-	    <halpin>"spindle.p"</halpin>
-	    <resolution>10</resolution>
-	    <orient>HORIZONTAL</orient>
-	    <initval>1900</initval>
-	    <min_>0</min_>
-	    <max_>5000</max_>
-	</scale>
-
-	<label><text>"I"</text></label>
-	<scale>
-	    <font>("Helvetica",16)</font>
-	    <width>"25"</width>
-	    <halpin>"spindle.i"</halpin>
-	    <resolution>10</resolution>
-	    <orient>HORIZONTAL</orient>
-	    <initval>3500</initval>
-	    <min_>0</min_>
-	    <max_>5000</max_>
-	</scale>
-
-	<label><text>"D"</text></label>
-	<scale>
-	    <font>("Helvetica",16)</font>
-	    <width>"25"</width>
-	    <halpin>"spindle.d"</halpin>
-	    <resolution>10</resolution>
-	    <orient>HORIZONTAL</orient>
-	    <initval>1500</initval>
-	    <min_>0</min_>
-	    <max_>5000</max_>
-	</scale>
-
-	<label><text>"Otáčky vřetena"</text></label>
+	<label><text>"Otáčky motoru"</text></label>
 	<number>
 		<halpin>"spindle.show"</halpin>
 		<font>("Helvetica", 24)</font>
 		<format>"+4.2f RPM"</format>
 	</number>
+
+	<label><text>"Skutečné otáčky motoru"</text></label>
+	<number>
+		<halpin>"motor.real-rpm"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f RPM"</format>
+	</number>
+
+	<label><text>"Skutečné otáčky vřetena"</text></label>
+	<number>
+		<halpin>"spindle.real-rpm"</halpin>
+		<font>("Helvetica", 24)</font>
+		<format>"+4.2f RPM"</format>
+	</number>
+
+	<led>
+		<on_color>"green"</on_color>
+		<off_color>"red"</off_color>
+		<led_size>20</led_size>
+		<halpin>"on_speed"</halpin>
+	</led>
 
 <!--
 	<label>

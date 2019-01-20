@@ -1,7 +1,5 @@
-# Include your custom_postgui HAL commands here
+# Include your custom-postgui HAL commands here
 # This file will not be overwritten when you run PNCconf again
-
-sets spindle-at-speed true
 
 # Temperature measurement
 #loadusr -Wn temperature linuxcnc-temperature -n linuxcnc-temperature
@@ -10,27 +8,93 @@ sets spindle-at-speed true
 #net temperature1  temperature.temp1 => pyvcp.temp.2
 
 # Spindle control
-loadusr -Wn spindle linuxcnc-spindle
-loadrt mux2 count=1
-loadrt scale count=1
-addf mux2.0  servo-thread
-addf scale.0 servo-thread
- 
-setp mux2.0.in0 0.5
-setp mux2.0.in1 2.0
-setp scale.0.offset 0.0
+# loadusr -Wn spindle linuxcnc-spindle
+# loadrt mux2 count=1
+# loadrt scale count=2
+# addf mux2.0  servo-thread
+# addf scale.0 servo-thread
+#  
+# setp mux2.0.in0 0.5
+# setp mux2.0.in1 2.0
+# setp scale.0.offset 0.0
+# 
+# net spindle-cmd-rpm-abs => scale.0.in
+# net spindle-ratio-signal <= mux2.0.out
+# net spindle-ratio-signal => scale.0.gain
+# net spindle-ratio-select <= pyvcp.spindle-ratio.dolni
+# net spindle-ratio-select => mux2.0.sel
+# net spindle-real-rpm-abs <= scale.0.out
+# 
+# sets spindle-at-speed true
+# 
+# net spindle-net.p pyvcp.spindle.p-f => spindle.p
+# net spindle-net.i pyvcp.spindle.i-f => spindle.i
+# net spindle-net.d pyvcp.spindle.d-f => spindle.d
+# 
+# 
+# net spindle-real-rpm-abs => spindle.speed
+# net spindle-real-rpm-abs => pyvcp.spindle.show
 
-net spindle-cmd-rpm-abs => scale.0.in
-net spindle-ratio-signal <= mux2.0.out
-net spindle-ratio-signal => scale.0.gain
-net spindle-ratio-select <= pyvcp.spindle-ratio.dolni
-net spindle-ratio-select => mux2.0.sel
-net spindle-real-rpm-abs <= scale.0.out
+loadrt scale names=spindle-to-motor-scale,encoder-to-spindle-speed-scale,encoder-to-spindle-pos-scale,spindle-speed-to-rpm-scale
+addf spindle-to-motor-scale servo-thread
+addf encoder-to-spindle-speed-scale servo-thread
+addf encoder-to-spindle-pos-scale servo-thread
+addf spindle-speed-to-rpm-scale servo-thread
+setp spindle-to-motor-scale.offset 0.0
+setp encoder-to-spindle-speed-scale.offset 0.0
+setp encoder-to-spindle-pos-scale.offset 0.0
+setp spindle-speed-to-rpm-scale.offset 0.0
+setp spindle-speed-to-rpm-scale.gain 60.0
 
-net spindle-net.p pyvcp.spindle.p-f => spindle.p
-net spindle-net.i pyvcp.spindle.i-f => spindle.i
-net spindle-net.d pyvcp.spindle.d-f => spindle.d
+loadrt mux2 names=spindle-to-motor-mux,encoder-to-spindle-mux
+addf spindle-to-motor-mux servo-thread
+addf encoder-to-spindle-mux servo-thread
+setp spindle-to-motor-mux.in0 0.5
+setp spindle-to-motor-mux.in1 2.0
+setp encoder-to-spindle-mux.in0 2.0
+setp encoder-to-spindle-mux.in1 0.5
+
+net spindle-cmd-rpm => spindle-to-motor-scale.in
+
+net spindle-gear-ratio-signal spindle-to-motor-mux.out => spindle-to-motor-scale.gain
+net encoder-gear-ratio-signal encoder-to-spindle-mux.out => encoder-to-spindle-speed-scale.gain
+net encoder-gear-ratio-signal => encoder-to-spindle-pos-scale.gain
+
+net spindle-gear-select pyvcp.spindle-ratio.dolni => spindle-to-motor-mux.sel
+net spindle-gear-select pyvcp.spindle-ratio.dolni => encoder-to-spindle-mux.sel
+
+net motor-cmd-rpm spindle-to-motor-scale.out => pyvcp.spindle.show
+
+setp hm2_5i24.0.pwmgen.00.output-type 1
+setp hm2_5i24.0.pwmgen.00.scale 3100.0
+net spindle-enable motion.spindle-on => hm2_5i24.0.pwmgen.00.enable
+net motor-cmd-rpm => hm2_5i24.0.pwmgen.00.value
 
 
-net spindle-real-rpm-abs => spindle.speed
-net spindle-real-rpm-abs => pyvcp.spindle.show
+setp hm2_5i24.0.encoder.00.scale 2400.0
+net encoder-speed <= hm2_5i24.0.encoder.00.velocity
+net encoder-position <= hm2_5i24.0.encoder.00.position
+net encoder-speed => encoder-to-spindle-speed-scale.in
+net encoder-position => encoder-to-spindle-pos-scale.in
+net spindle-speed encoder-to-spindle-speed-scale.out
+net spindle-pos <= encoder-to-spindle-pos-scale.out
+
+net spindle-speed => spindle-speed-to-rpm-scale.in
+net spindle-rpm <= spindle-speed-to-rpm-scale.out
+
+net spindle-rpm => pyvcp.spindle.real-rpm
+
+loadrt near names=spindle-at-speed-near
+addf spindle-at-speed-near servo-thread
+setp spindle-at-speed-near.scale 1.1
+setp spindle-at-speed-near.difference 40
+
+net spindle-rpm => spindle-at-speed-near.in2
+net spindle-cmd-rpm => spindle-at-speed-near.in1
+net spindle-at-speed <= spindle-at-speed-near.out
+net spindle-at-speed => pyvcp.on_speed
+
+net spindle-pos => motion.spindle-revs
+net spindle-speed => motion.spindle-speed-in
+net spindle-index-enable hm2_5i24.0.encoder.00.index-enable <=> motion.spindle-index-enable
+

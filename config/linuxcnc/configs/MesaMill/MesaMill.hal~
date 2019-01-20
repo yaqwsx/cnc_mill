@@ -290,25 +290,22 @@ net spindle-output        <=  pid.s.output
 
 # ---setup spindle control signals---
 
-# net spindle-vel-cmd-rps        <=  motion.spindle-speed-out-rps
-# net spindle-vel-cmd-rps-abs    <=  motion.spindle-speed-out-rps-abs
-# net spindle-vel-cmd-rpm        <=  motion.spindle-speed-out
-# net spindle-vel-cmd-rpm-abs    <=  motion.spindle-speed-out-abs
-# net spindle-enable             <=  motion.spindle-on
-# net spindle-cw                 <=  motion.spindle-forward
-# net spindle-ccw                <=  motion.spindle-reverse
-# net spindle-brake              <=  motion.spindle-brake
-# net spindle-revs               =>  motion.spindle-revs
-# net spindle-at-speed           =>  motion.spindle-at-speed
-# net spindle-vel-fb-rps         =>  motion.spindle-speed-in
-# net spindle-index-enable      <=>  motion.spindle-index-enable
+net spindle-vel-cmd-rps        <=  motion.spindle-speed-out-rps
+net spindle-vel-cmd-rps-abs    <=  motion.spindle-speed-out-rps-abs
+net spindle-vel-cmd-rpm        <=  motion.spindle-speed-out
+net spindle-vel-cmd-rpm-abs    <=  motion.spindle-speed-out-abs
+net spindle-enable             <=  motion.spindle-on
+net spindle-cw                 <=  motion.spindle-forward
+net spindle-ccw                <=  motion.spindle-reverse
+net spindle-brake              <=  motion.spindle-brake
+net spindle-revs               =>  motion.spindle-revs
+net spindle-at-speed           =>  motion.spindle-at-speed
+net spindle-vel-fb-rps         =>  motion.spindle-speed-in
+net spindle-index-enable      <=>  motion.spindle-index-enable
 
-net spindle-cmd-rpm     <= motion.spindle-speed-out
-net spindle-cmd-rpm-abs <= motion.spindle-speed-out-abs
-net spindle-cmd-rps     <= motion.spindle-speed-out-rps
-#net spindle-cmd-rps-abs <= motion.spindle-speed-out-rps-abs
-net spindle-at-speed    => motion.spindle-at-speed
+# ---Setup spindle at speed signals---
 
+sets spindle-at-speed true
 
 
 #******************************
@@ -363,8 +360,9 @@ net estop-ext     =>  iocontrol.0.emc-enable-in
 
 #  ---manual tool change signals---
 
-loadusr -W hal_manualtoolchange_jog
-net tool-change-request     iocontrol.0.tool-change       =>  hal_manualtoolchange_jog.change
-net tool-change-confirmed   iocontrol.0.tool-changed      <=  hal_manualtoolchange_jog.changed
-net tool-number             iocontrol.0.tool-prep-number  =>  hal_manualtoolchange_jog.number
+loadusr -W hal_manualtoolchange
+net tool-change-request     iocontrol.0.tool-change       =>  hal_manualtoolchange.change
+net tool-change-confirmed   iocontrol.0.tool-changed      <=  hal_manualtoolchange.changed
+net tool-number             iocontrol.0.tool-prep-number  =>  hal_manualtoolchange.number
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
+
