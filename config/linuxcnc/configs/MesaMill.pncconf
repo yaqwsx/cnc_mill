@@ -35,6 +35,7 @@
   <property name="abldc_use_encoder" type="bool" value="False"/>
   <property name="abldc_use_hall" type="bool" value="True"/>
   <property name="abldc_use_index" type="bool" value="False"/>
+  <property name="absnames" type="string" value=""/>
   <property name="acbencoder_pitch" type="bool" value="False"/>
   <property name="acbencoder_pulley" type="bool" value="False"/>
   <property name="acbencoder_tpi" type="bool" value="False"/>
@@ -109,9 +110,11 @@
   <property name="cbencoder_pulley" type="string" value="52149"/>
   <property name="cbencoder_tpi" type="string" value="52147"/>
   <property name="cbencoder_worm" type="string" value="52148"/>
-  <property name="cbmicrosteps" type="string" value="52152"/>
+  <property name="cbmicrosteps" type="string" value="57116"/>
+  <property name="cbmotor_gear1" type="string" value="57117"/>
+  <property name="cbmotor_gear2" type="string" value="57118"/>
   <property name="cbmotor_pitch" type="string" value="52150"/>
-  <property name="cbmotor_pulley" type="string" value="52154"/>
+  <property name="cbmotor_pulley" type="string" value="57119"/>
   <property name="cbmotor_tpi" type="string" value="52151"/>
   <property name="cbmotor_worm" type="string" value="52153"/>
   <property name="centerembededgvcp" type="bool" value="True"/>
@@ -134,7 +137,7 @@
   <property name="encoder_pulleydriver" type="string" value="52137"/>
   <property name="encoder_wormdriven" type="string" value="52134"/>
   <property name="encoder_wormdriver" type="string" value="52135"/>
-  <property name="encoderline" type="string" value="52131"/>
+  <property name="encoderline" type="string" value="57106"/>
   <property name="externalfo" type="bool" value="False"/>
   <property name="externaljog" type="bool" value="False"/>
   <property name="externalmpg" type="bool" value="False"/>
@@ -189,8 +192,8 @@
   <property name="gsdebouncetime" type="float" value="0.2"/>
   <property name="gsgraycode" type="bool" value="False"/>
   <property name="gsignorefalse" type="bool" value="False"/>
-  <property name="gsincrvalue0" type="int" value="0"/>
-  <property name="gsincrvalue1" type="int" value="0"/>
+  <property name="gsincrvalue0" type="float" value="2000.0"/>
+  <property name="gsincrvalue1" type="float" value="2000.0"/>
   <property name="gsincrvalue10" type="int" value="0"/>
   <property name="gsincrvalue11" type="int" value="0"/>
   <property name="gsincrvalue12" type="int" value="0"/>
@@ -209,9 +212,9 @@
   <property name="hal8i20signames" type="eval" value="[]"/>
   <property name="halanaloginsignames" type="eval" value="[]"/>
   <property name="halencoderinputsignames" type="eval" value="[]"/>
-  <property name="halinputsignames" type="eval" value="[]"/>
+  <property name="halinputsignames" type="eval" value="['GPIO01', 'GPIO02', 'GPIO03', 'GPIO04', 'GPIO05', 'GPIO06', 'GPIO07', 'GPIO08', 'GPIO09', 'GPIO10', 'GPIO11', 'GPIO12', 'tool_probe', 'piece_probe']"/>
   <property name="halmuxencodersignames" type="eval" value="[]"/>
-  <property name="haloutputsignames" type="eval" value="[]"/>
+  <property name="haloutputsignames" type="eval" value="['Test1', 'Test2', 'estop_r', 'spindle_r', 'spindle_soft_r', 'spindle_dis_r', 'stepper_r', 'machine-is-enabled']"/>
   <property name="halpotsignames" type="eval" value="[]"/>
   <property name="halpwmoutputsignames" type="eval" value="[]"/>
   <property name="halresolversignames" type="eval" value="[]"/>
@@ -233,7 +236,7 @@
   <property name="halui_cmd7" type="string" value=""/>
   <property name="halui_cmd8" type="string" value=""/>
   <property name="halui_cmd9" type="string" value=""/>
-  <property name="help" type="string" value="help-axisconfig.txt"/>
+  <property name="help" type="string" value="help-axismotor.txt"/>
   <property name="homeboth" type="bool" value="False"/>
   <property name="homeindex" type="bool" value="False"/>
   <property name="homenone" type="bool" value="True"/>
@@ -279,29 +282,30 @@
   <property name="limitswitch" type="bool" value="False"/>
   <property name="loadcompbase" type="eval" value="[]"/>
   <property name="loadcompservo" type="eval" value="[]"/>
-  <property name="machinename" type="string" value="Mesa2"/>
+  <property name="lowpassnames" type="string" value=""/>
+  <property name="machinename" type="string" value="MesaMill"/>
   <property name="max_angular_velocity" type="float" value="180.0"/>
   <property name="max_feed_override" type="float" value="2.0"/>
   <property name="max_linear_velocity" type="float" value="25.0"/>
   <property name="max_spindle_override" type="float" value="1.0"/>
   <property name="maxspeeddisplay" type="float" value="1000.0"/>
   <property name="md5sums" type="eval" value="[]"/>
-  <property name="mesa0_3pwm_frequency" type="float" value="20000.0"/>
+  <property name="mesa0_3pwm_frequency" type="float" value="0.0"/>
   <property name="mesa0_boardtitle" type="string" value="5i24"/>
-  <property name="mesa0_currentfirmwaredata" type="eval" value="['5i24', '5i24', 'SVST2_8_72', '5i24', 'hm2_pci', 2, 3, 0, 10, 2, 3, 0, 0, 8, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 72, 33, 200, [2, 3, 4], [u'Quad Enc-B', 1], [u'Quad Enc-A', 1], [u'Quad Enc-B', 0], [u'Quad Enc-A', 0], [u'Quad Enc-I', 1], [u'Quad Enc-I', 0], [u'PWM Gen-P', 1], [u'PWM Gen-P', 0], [u'PWM Gen-D', 1], [u'PWM Gen-D', 0], [u'PWM Gen-E', 1], [u'PWM Gen-E', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 0], [u'Dir Gen-B', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 1], [u'Dir Gen-B', 1], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 2], [u'Dir Gen-B', 2], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 3], [u'Dir Gen-B', 3], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 4], [u'Dir Gen-B', 4], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 5], [u'Dir Gen-B', 5], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 6], [u'Dir Gen-B', 6], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 7], [u'Dir Gen-B', 7], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0]]"/>
-  <property name="mesa0_firmware" type="string" value="SVST2_8_72"/>
+  <property name="mesa0_currentfirmwaredata" type="eval" value="['5i24', '5i24', 'SVST1_5_72', '5i24', 'hm2_pci', 1, 3, 0, 10, 1, 3, 0, 0, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 72, 33, 200, [2, 3, 4], [u'Quad Enc-A', 0], [u'Quad Enc-B', 0], [u'Quad Enc-I', 0], [u'PWM Gen-P', 0], [u'PWM Gen-D', 0], [u'PWM Gen-E', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 0], [u'Dir Gen-B', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 1], [u'Dir Gen-B', 1], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 2], [u'Dir Gen-B', 2], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 3], [u'Dir Gen-B', 3], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'Step Gen-A', 4], [u'Dir Gen-B', 4], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0], [u'GPIO Input', 0]]"/>
+  <property name="mesa0_firmware" type="string" value="SVST1_5_72"/>
   <property name="mesa0_isawatchdog" type="int" value="1"/>
-  <property name="mesa0_numof_encodergens" type="int" value="2"/>
-  <property name="mesa0_numof_pwmgens" type="int" value="2"/>
+  <property name="mesa0_numof_encodergens" type="int" value="1"/>
+  <property name="mesa0_numof_pwmgens" type="int" value="1"/>
   <property name="mesa0_numof_resolvers" type="int" value="0"/>
-  <property name="mesa0_numof_sserialchannels" type="int" value="1"/>
+  <property name="mesa0_numof_sserialchannels" type="int" value="0"/>
   <property name="mesa0_numof_sserialports" type="int" value="0"/>
-  <property name="mesa0_numof_stepgens" type="int" value="8"/>
+  <property name="mesa0_numof_stepgens" type="int" value="5"/>
   <property name="mesa0_numof_tppwmgens" type="int" value="0"/>
   <property name="mesa0_parportaddrs" type="string" value="0x378"/>
-  <property name="mesa0_pdm_frequency" type="float" value="6000000.0"/>
-  <property name="mesa0_pwm_frequency" type="float" value="20000.0"/>
-  <property name="mesa0_watchdog_timeout" type="float" value="5000000.0"/>
+  <property name="mesa0_pdm_frequency" type="float" value="0.0"/>
+  <property name="mesa0_pwm_frequency" type="float" value="0.0"/>
+  <property name="mesa0_watchdog_timeout" type="float" value="0.0"/>
   <property name="mesa0c1pin0" type="string" value="unused-input"/>
   <property name="mesa0c1pin0inv" type="bool" value="False"/>
   <property name="mesa0c1pin0type" type="string" value="GPIO Input"/>
@@ -374,166 +378,166 @@
   <property name="mesa0c1pin9" type="string" value="unused-input"/>
   <property name="mesa0c1pin9inv" type="bool" value="False"/>
   <property name="mesa0c1pin9type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin0" type="string" value="unused-encoder"/>
+  <property name="mesa0c2pin0" type="string" value="s-encoder-a"/>
   <property name="mesa0c2pin0inv" type="bool" value="False"/>
-  <property name="mesa0c2pin0type" type="string" value="Quad Enc-B"/>
-  <property name="mesa0c2pin1" type="string" value="unused-encoder"/>
-  <property name="mesa0c2pin10" type="string" value="unused-pwm"/>
+  <property name="mesa0c2pin0type" type="string" value="Quad Enc-A"/>
+  <property name="mesa0c2pin1" type="string" value="s-encoder-b"/>
+  <property name="mesa0c2pin10" type="string" value="stepper_r"/>
   <property name="mesa0c2pin10inv" type="bool" value="False"/>
-  <property name="mesa0c2pin10type" type="string" value="PWM Gen-E"/>
-  <property name="mesa0c2pin11" type="string" value="unused-pwm"/>
+  <property name="mesa0c2pin10type" type="string" value="GPIO Output"/>
+  <property name="mesa0c2pin11" type="string" value="GPIO01"/>
   <property name="mesa0c2pin11inv" type="bool" value="False"/>
-  <property name="mesa0c2pin11type" type="string" value="PWM Gen-E"/>
-  <property name="mesa0c2pin12" type="string" value="unused-input"/>
+  <property name="mesa0c2pin11type" type="string" value="GPIO Input"/>
+  <property name="mesa0c2pin12" type="string" value="GPIO02"/>
   <property name="mesa0c2pin12inv" type="bool" value="False"/>
   <property name="mesa0c2pin12type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin13" type="string" value="unused-input"/>
+  <property name="mesa0c2pin13" type="string" value="GPIO03"/>
   <property name="mesa0c2pin13inv" type="bool" value="False"/>
   <property name="mesa0c2pin13type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin14" type="string" value="unused-input"/>
+  <property name="mesa0c2pin14" type="string" value="GPIO04"/>
   <property name="mesa0c2pin14inv" type="bool" value="False"/>
   <property name="mesa0c2pin14type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin15" type="string" value="unused-input"/>
+  <property name="mesa0c2pin15" type="string" value="GPIO05"/>
   <property name="mesa0c2pin15inv" type="bool" value="False"/>
   <property name="mesa0c2pin15type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin16" type="string" value="unused-input"/>
+  <property name="mesa0c2pin16" type="string" value="GPIO06"/>
   <property name="mesa0c2pin16inv" type="bool" value="False"/>
   <property name="mesa0c2pin16type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin17" type="string" value="unused-input"/>
+  <property name="mesa0c2pin17" type="string" value="GPIO07"/>
   <property name="mesa0c2pin17inv" type="bool" value="False"/>
   <property name="mesa0c2pin17type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin18" type="string" value="unused-input"/>
+  <property name="mesa0c2pin18" type="string" value="GPIO08"/>
   <property name="mesa0c2pin18inv" type="bool" value="False"/>
   <property name="mesa0c2pin18type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin19" type="string" value="unused-input"/>
+  <property name="mesa0c2pin19" type="string" value="GPIO09"/>
   <property name="mesa0c2pin19inv" type="bool" value="False"/>
   <property name="mesa0c2pin19type" type="string" value="GPIO Input"/>
   <property name="mesa0c2pin1inv" type="bool" value="False"/>
-  <property name="mesa0c2pin1type" type="string" value="Quad Enc-A"/>
-  <property name="mesa0c2pin2" type="string" value="unused-encoder"/>
-  <property name="mesa0c2pin20" type="string" value="unused-input"/>
+  <property name="mesa0c2pin1type" type="string" value="Quad Enc-B"/>
+  <property name="mesa0c2pin2" type="string" value="s-encoder-i"/>
+  <property name="mesa0c2pin20" type="string" value="GPIO10"/>
   <property name="mesa0c2pin20inv" type="bool" value="False"/>
   <property name="mesa0c2pin20type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin21" type="string" value="unused-input"/>
+  <property name="mesa0c2pin21" type="string" value="GPIO11"/>
   <property name="mesa0c2pin21inv" type="bool" value="False"/>
   <property name="mesa0c2pin21type" type="string" value="GPIO Input"/>
-  <property name="mesa0c2pin22" type="string" value="unused-input"/>
+  <property name="mesa0c2pin22" type="string" value="GPIO12"/>
   <property name="mesa0c2pin22inv" type="bool" value="False"/>
   <property name="mesa0c2pin22type" type="string" value="GPIO Input"/>
   <property name="mesa0c2pin23" type="string" value="unused-input"/>
   <property name="mesa0c2pin23inv" type="bool" value="False"/>
   <property name="mesa0c2pin23type" type="string" value="GPIO Input"/>
   <property name="mesa0c2pin2inv" type="bool" value="False"/>
-  <property name="mesa0c2pin2type" type="string" value="Quad Enc-B"/>
-  <property name="mesa0c2pin3" type="string" value="unused-encoder"/>
+  <property name="mesa0c2pin2type" type="string" value="Quad Enc-I"/>
+  <property name="mesa0c2pin3" type="string" value="unused-pwm"/>
   <property name="mesa0c2pin3inv" type="bool" value="False"/>
-  <property name="mesa0c2pin3type" type="string" value="Quad Enc-A"/>
-  <property name="mesa0c2pin4" type="string" value="unused-encoder"/>
+  <property name="mesa0c2pin3type" type="string" value="PWM Gen-P"/>
+  <property name="mesa0c2pin4" type="string" value="unused-pwm"/>
   <property name="mesa0c2pin4inv" type="bool" value="False"/>
-  <property name="mesa0c2pin4type" type="string" value="Quad Enc-I"/>
-  <property name="mesa0c2pin5" type="string" value="unused-encoder"/>
+  <property name="mesa0c2pin4type" type="string" value="PWM Gen-D"/>
+  <property name="mesa0c2pin5" type="string" value="unused-pwm"/>
   <property name="mesa0c2pin5inv" type="bool" value="False"/>
-  <property name="mesa0c2pin5type" type="string" value="Quad Enc-I"/>
-  <property name="mesa0c2pin6" type="string" value="unused-pwm"/>
+  <property name="mesa0c2pin5type" type="string" value="PWM Gen-E"/>
+  <property name="mesa0c2pin6" type="string" value="machine-is-enabled"/>
   <property name="mesa0c2pin6inv" type="bool" value="False"/>
-  <property name="mesa0c2pin6type" type="string" value="PWM Gen-P"/>
-  <property name="mesa0c2pin7" type="string" value="unused-pwm"/>
+  <property name="mesa0c2pin6type" type="string" value="GPIO Output"/>
+  <property name="mesa0c2pin7" type="string" value="spindle_r"/>
   <property name="mesa0c2pin7inv" type="bool" value="False"/>
-  <property name="mesa0c2pin7type" type="string" value="PWM Gen-P"/>
-  <property name="mesa0c2pin8" type="string" value="unused-pwm"/>
-  <property name="mesa0c2pin8inv" type="bool" value="False"/>
-  <property name="mesa0c2pin8type" type="string" value="PWM Gen-D"/>
-  <property name="mesa0c2pin9" type="string" value="unused-pwm"/>
+  <property name="mesa0c2pin7type" type="string" value="GPIO Output"/>
+  <property name="mesa0c2pin8" type="string" value="spindle_soft_r"/>
+  <property name="mesa0c2pin8inv" type="bool" value="True"/>
+  <property name="mesa0c2pin8type" type="string" value="GPIO Output"/>
+  <property name="mesa0c2pin9" type="string" value="spindle_dis_r"/>
   <property name="mesa0c2pin9inv" type="bool" value="False"/>
-  <property name="mesa0c2pin9type" type="string" value="PWM Gen-D"/>
+  <property name="mesa0c2pin9type" type="string" value="GPIO Output"/>
   <property name="mesa0c3pin0" type="string" value="x-stepgen-step"/>
   <property name="mesa0c3pin0inv" type="bool" value="False"/>
   <property name="mesa0c3pin0type" type="string" value="Step Gen-A"/>
   <property name="mesa0c3pin1" type="string" value="x-stepgen-dir"/>
-  <property name="mesa0c3pin10" type="string" value="unused-input"/>
-  <property name="mesa0c3pin10inv" type="bool" value="False"/>
-  <property name="mesa0c3pin10type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin11" type="string" value="unused-input"/>
-  <property name="mesa0c3pin11inv" type="bool" value="False"/>
+  <property name="mesa0c3pin10" type="string" value="z-enable"/>
+  <property name="mesa0c3pin10inv" type="bool" value="True"/>
+  <property name="mesa0c3pin10type" type="string" value="GPIO Output"/>
+  <property name="mesa0c3pin11" type="string" value="max-home-z"/>
+  <property name="mesa0c3pin11inv" type="bool" value="True"/>
   <property name="mesa0c3pin11type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin12" type="string" value="z-stepgen-step"/>
+  <property name="mesa0c3pin12" type="string" value="unused-stepgen"/>
   <property name="mesa0c3pin12inv" type="bool" value="False"/>
   <property name="mesa0c3pin12type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c3pin13" type="string" value="z-stepgen-dir"/>
+  <property name="mesa0c3pin13" type="string" value="unused-stepgen"/>
   <property name="mesa0c3pin13inv" type="bool" value="False"/>
   <property name="mesa0c3pin13type" type="string" value="Dir Gen-B"/>
-  <property name="mesa0c3pin14" type="string" value="z-enable"/>
-  <property name="mesa0c3pin14inv" type="bool" value="True"/>
-  <property name="mesa0c3pin14type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin15" type="string" value="max-home-z"/>
+  <property name="mesa0c3pin14" type="string" value="unused-input"/>
+  <property name="mesa0c3pin14inv" type="bool" value="False"/>
+  <property name="mesa0c3pin14type" type="string" value="GPIO Input"/>
+  <property name="mesa0c3pin15" type="string" value="unused-input"/>
   <property name="mesa0c3pin15inv" type="bool" value="False"/>
   <property name="mesa0c3pin15type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin16" type="string" value="unused-output"/>
+  <property name="mesa0c3pin16" type="string" value="unused-stepgen"/>
   <property name="mesa0c3pin16inv" type="bool" value="False"/>
-  <property name="mesa0c3pin16type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin17" type="string" value="unused-output"/>
+  <property name="mesa0c3pin16type" type="string" value="Step Gen-A"/>
+  <property name="mesa0c3pin17" type="string" value="unused-stepgen"/>
   <property name="mesa0c3pin17inv" type="bool" value="False"/>
-  <property name="mesa0c3pin17type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin18" type="string" value="unused-stepgen"/>
+  <property name="mesa0c3pin17type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c3pin18" type="string" value="unused-input"/>
   <property name="mesa0c3pin18inv" type="bool" value="False"/>
-  <property name="mesa0c3pin18type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c3pin19" type="string" value="unused-stepgen"/>
+  <property name="mesa0c3pin18type" type="string" value="GPIO Input"/>
+  <property name="mesa0c3pin19" type="string" value="unused-input"/>
   <property name="mesa0c3pin19inv" type="bool" value="False"/>
-  <property name="mesa0c3pin19type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c3pin19type" type="string" value="GPIO Input"/>
   <property name="mesa0c3pin1inv" type="bool" value="False"/>
   <property name="mesa0c3pin1type" type="string" value="Dir Gen-B"/>
   <property name="mesa0c3pin2" type="string" value="x-enable"/>
-  <property name="mesa0c3pin20" type="string" value="unused-output"/>
+  <property name="mesa0c3pin20" type="string" value="tool_probe"/>
   <property name="mesa0c3pin20inv" type="bool" value="False"/>
-  <property name="mesa0c3pin20type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin21" type="string" value="probe-in"/>
+  <property name="mesa0c3pin20type" type="string" value="GPIO Input"/>
+  <property name="mesa0c3pin21" type="string" value="piece_probe"/>
   <property name="mesa0c3pin21inv" type="bool" value="False"/>
   <property name="mesa0c3pin21type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin22" type="string" value="estop-out"/>
+  <property name="mesa0c3pin22" type="string" value="estop-ext"/>
   <property name="mesa0c3pin22inv" type="bool" value="False"/>
-  <property name="mesa0c3pin22type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin23" type="string" value="estop-ext"/>
-  <property name="mesa0c3pin23inv" type="bool" value="True"/>
+  <property name="mesa0c3pin22type" type="string" value="GPIO Input"/>
+  <property name="mesa0c3pin23" type="string" value="unused-input"/>
+  <property name="mesa0c3pin23inv" type="bool" value="False"/>
   <property name="mesa0c3pin23type" type="string" value="GPIO Input"/>
   <property name="mesa0c3pin2inv" type="bool" value="True"/>
   <property name="mesa0c3pin2type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin3" type="string" value="max-home-x"/>
+  <property name="mesa0c3pin3" type="string" value="min-home-x"/>
   <property name="mesa0c3pin3inv" type="bool" value="True"/>
   <property name="mesa0c3pin3type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin4" type="string" value="unused-input"/>
+  <property name="mesa0c3pin4" type="string" value="y-stepgen-step"/>
   <property name="mesa0c3pin4inv" type="bool" value="False"/>
-  <property name="mesa0c3pin4type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin5" type="string" value="unused-input"/>
+  <property name="mesa0c3pin4type" type="string" value="Step Gen-A"/>
+  <property name="mesa0c3pin5" type="string" value="y-stepgen-dir"/>
   <property name="mesa0c3pin5inv" type="bool" value="False"/>
-  <property name="mesa0c3pin5type" type="string" value="GPIO Input"/>
-  <property name="mesa0c3pin6" type="string" value="y-stepgen-step"/>
-  <property name="mesa0c3pin6inv" type="bool" value="False"/>
-  <property name="mesa0c3pin6type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c3pin7" type="string" value="y-stepgen-dir"/>
-  <property name="mesa0c3pin7inv" type="bool" value="False"/>
-  <property name="mesa0c3pin7type" type="string" value="Dir Gen-B"/>
-  <property name="mesa0c3pin8" type="string" value="y-enable"/>
-  <property name="mesa0c3pin8inv" type="bool" value="True"/>
-  <property name="mesa0c3pin8type" type="string" value="GPIO Output"/>
-  <property name="mesa0c3pin9" type="string" value="max-home-y"/>
+  <property name="mesa0c3pin5type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c3pin6" type="string" value="y-enable"/>
+  <property name="mesa0c3pin6inv" type="bool" value="True"/>
+  <property name="mesa0c3pin6type" type="string" value="GPIO Output"/>
+  <property name="mesa0c3pin7" type="string" value="max-home-y"/>
+  <property name="mesa0c3pin7inv" type="bool" value="True"/>
+  <property name="mesa0c3pin7type" type="string" value="GPIO Input"/>
+  <property name="mesa0c3pin8" type="string" value="z-stepgen-step"/>
+  <property name="mesa0c3pin8inv" type="bool" value="False"/>
+  <property name="mesa0c3pin8type" type="string" value="Step Gen-A"/>
+  <property name="mesa0c3pin9" type="string" value="z-stepgen-dir"/>
   <property name="mesa0c3pin9inv" type="bool" value="False"/>
-  <property name="mesa0c3pin9type" type="string" value="GPIO Input"/>
-  <property name="mesa0c4pin0" type="string" value="unused-stepgen"/>
+  <property name="mesa0c3pin9type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c4pin0" type="string" value="unused-input"/>
   <property name="mesa0c4pin0inv" type="bool" value="False"/>
-  <property name="mesa0c4pin0type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c4pin1" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin0type" type="string" value="GPIO Input"/>
+  <property name="mesa0c4pin1" type="string" value="unused-input"/>
   <property name="mesa0c4pin10" type="string" value="unused-input"/>
   <property name="mesa0c4pin10inv" type="bool" value="False"/>
   <property name="mesa0c4pin10type" type="string" value="GPIO Input"/>
   <property name="mesa0c4pin11" type="string" value="unused-input"/>
   <property name="mesa0c4pin11inv" type="bool" value="False"/>
   <property name="mesa0c4pin11type" type="string" value="GPIO Input"/>
-  <property name="mesa0c4pin12" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin12" type="string" value="unused-input"/>
   <property name="mesa0c4pin12inv" type="bool" value="False"/>
-  <property name="mesa0c4pin12type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c4pin13" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin12type" type="string" value="GPIO Input"/>
+  <property name="mesa0c4pin13" type="string" value="unused-input"/>
   <property name="mesa0c4pin13inv" type="bool" value="False"/>
-  <property name="mesa0c4pin13type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c4pin13type" type="string" value="GPIO Input"/>
   <property name="mesa0c4pin14" type="string" value="unused-input"/>
   <property name="mesa0c4pin14inv" type="bool" value="False"/>
   <property name="mesa0c4pin14type" type="string" value="GPIO Input"/>
@@ -546,14 +550,14 @@
   <property name="mesa0c4pin17" type="string" value="unused-output"/>
   <property name="mesa0c4pin17inv" type="bool" value="False"/>
   <property name="mesa0c4pin17type" type="string" value="GPIO Output"/>
-  <property name="mesa0c4pin18" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin18" type="string" value="unused-input"/>
   <property name="mesa0c4pin18inv" type="bool" value="False"/>
-  <property name="mesa0c4pin18type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c4pin19" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin18type" type="string" value="GPIO Input"/>
+  <property name="mesa0c4pin19" type="string" value="unused-input"/>
   <property name="mesa0c4pin19inv" type="bool" value="False"/>
-  <property name="mesa0c4pin19type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c4pin19type" type="string" value="GPIO Input"/>
   <property name="mesa0c4pin1inv" type="bool" value="False"/>
-  <property name="mesa0c4pin1type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c4pin1type" type="string" value="GPIO Input"/>
   <property name="mesa0c4pin2" type="string" value="unused-input"/>
   <property name="mesa0c4pin20" type="string" value="unused-output"/>
   <property name="mesa0c4pin20inv" type="bool" value="False"/>
@@ -578,12 +582,12 @@
   <property name="mesa0c4pin5" type="string" value="unused-input"/>
   <property name="mesa0c4pin5inv" type="bool" value="False"/>
   <property name="mesa0c4pin5type" type="string" value="GPIO Input"/>
-  <property name="mesa0c4pin6" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin6" type="string" value="unused-input"/>
   <property name="mesa0c4pin6inv" type="bool" value="False"/>
-  <property name="mesa0c4pin6type" type="string" value="Step Gen-A"/>
-  <property name="mesa0c4pin7" type="string" value="unused-stepgen"/>
+  <property name="mesa0c4pin6type" type="string" value="GPIO Input"/>
+  <property name="mesa0c4pin7" type="string" value="unused-input"/>
   <property name="mesa0c4pin7inv" type="bool" value="False"/>
-  <property name="mesa0c4pin7type" type="string" value="Dir Gen-B"/>
+  <property name="mesa0c4pin7type" type="string" value="GPIO Input"/>
   <property name="mesa0c4pin8" type="string" value="unused-input"/>
   <property name="mesa0c4pin8inv" type="bool" value="False"/>
   <property name="mesa0c4pin8type" type="string" value="GPIO Input"/>
@@ -3786,7 +3790,7 @@
   <property name="mesa1sserial0_5pin9inv" type="bool" value="False"/>
   <property name="mesa1sserial0_5pin9type" type="string" value="GPIO Input"/>
   <property name="mesa1sserial0_5subboard" type="string" value="none"/>
-  <property name="microstep" type="string" value="52141"/>
+  <property name="microstep" type="string" value="57108"/>
   <property name="min_angular_velocity" type="float" value="1.66666666667"/>
   <property name="min_linear_velocity" type="float" value="0.5"/>
   <property name="min_spindle_override" type="float" value="0.5"/>
@@ -3797,10 +3801,15 @@
   <property name="mitsub_vfd_id" type="string" value="('spindle_vfd', 1)"/>
   <property name="mitsub_vfd_port" type="string" value="/dev/ttyS0"/>
   <property name="modbus" type="int" value="0"/>
+  <property name="motor_gear1driven" type="string" value="57109"/>
+  <property name="motor_gear1driver" type="string" value="57110"/>
+  <property name="motor_gear2driven" type="string" value="57111"/>
+  <property name="motor_gear2driver" type="string" value="57112"/>
   <property name="motor_leadscrew" type="string" value="52139"/>
   <property name="motor_leadscrew_tpi" type="string" value="52140"/>
-  <property name="motor_pulleydriven" type="string" value="52144"/>
-  <property name="motor_pulleydriver" type="string" value="52145"/>
+  <property name="motor_max" type="string" value="57115"/>
+  <property name="motor_pulleydriven" type="string" value="57113"/>
+  <property name="motor_pulleydriver" type="string" value="57114"/>
   <property name="motor_wormdriven" type="string" value="52142"/>
   <property name="motor_wormdriver" type="string" value="52143"/>
   <property name="mpgdebounce" type="bool" value="True"/>
@@ -4015,12 +4024,12 @@
   <property name="pp3_direction" type="int" value="0"/>
   <property name="pyvcp" type="bool" value="True"/>
   <property name="pyvcp1" type="bool" value="False"/>
-  <property name="pyvcpblank" type="bool" value="True"/>
+  <property name="pyvcpblank" type="bool" value="False"/>
   <property name="pyvcpconnect" type="bool" value="True"/>
-  <property name="pyvcpexist" type="bool" value="False"/>
+  <property name="pyvcpexist" type="bool" value="True"/>
   <property name="pyvcphaltype" type="int" value="0"/>
   <property name="pyvcpheight" type="float" value="0.0"/>
-  <property name="pyvcpname" type="string" value="blank.xml"/>
+  <property name="pyvcpname" type="string" value="pyvcp-panel.xml"/>
   <property name="pyvcpposition" type="bool" value="False"/>
   <property name="pyvcpsize" type="bool" value="False"/>
   <property name="pyvcpwidth" type="float" value="0.0"/>
@@ -4028,41 +4037,42 @@
   <property name="pyvcpypos" type="float" value="0.0"/>
   <property name="raise_z_on_toolchange" type="bool" value="False"/>
   <property name="random_toolchanger" type="bool" value="False"/>
+  <property name="rbvoltage_5" type="string" value="57120"/>
   <property name="require_homing" type="bool" value="True"/>
   <property name="restore_joint_position" type="bool" value="False"/>
   <property name="s32in" type="int" value="10"/>
   <property name="s32out" type="int" value="10"/>
-  <property name="s3pwmdeadtime" type="int" value="500"/>
-  <property name="s3pwmscale" type="int" value="1"/>
-  <property name="s8i20maxcurrent" type="float" value="5.0"/>
-  <property name="sD" type="int" value="0"/>
-  <property name="sFF0" type="int" value="1"/>
-  <property name="sFF1" type="int" value="0"/>
-  <property name="sFF2" type="int" value="0"/>
-  <property name="sI" type="int" value="0"/>
-  <property name="sP" type="int" value="0"/>
+  <property name="s3pwmdeadtime" type="float" value="100.0"/>
+  <property name="s3pwmscale" type="float" value="1.0"/>
+  <property name="s8i20maxcurrent" type="float" value="0.0"/>
+  <property name="sD" type="float" value="0.0"/>
+  <property name="sFF0" type="float" value="1.0"/>
+  <property name="sFF1" type="float" value="0.0"/>
+  <property name="sFF2" type="float" value="0.0"/>
+  <property name="sI" type="float" value="0.0"/>
+  <property name="sP" type="float" value="0.0"/>
   <property name="sbacklash" type="int" value="0"/>
-  <property name="sbias" type="int" value="0"/>
-  <property name="sbldc_absolute_feedback" type="bool" value="False"/>
+  <property name="sbias" type="float" value="0.0"/>
+  <property name="sbldc_absolute_feedback" type="bool" value="True"/>
   <property name="sbldc_config" type="string" value=""/>
   <property name="sbldc_digital_output" type="bool" value="False"/>
   <property name="sbldc_drive_offset" type="float" value="0.0"/>
   <property name="sbldc_emulated_feedback" type="bool" value="False"/>
-  <property name="sbldc_encoder_offset" type="int" value="0"/>
+  <property name="sbldc_encoder_offset" type="float" value="0.0"/>
   <property name="sbldc_fanuc_alignment" type="bool" value="False"/>
   <property name="sbldc_force_trapz" type="bool" value="False"/>
   <property name="sbldc_incremental_feedback" type="bool" value="True"/>
-  <property name="sbldc_inital_value" type="float" value="0.2"/>
-  <property name="sbldc_lead_angle" type="int" value="90"/>
-  <property name="sbldc_no_feedback" type="bool" value="False"/>
+  <property name="sbldc_inital_value" type="float" value="0.0"/>
+  <property name="sbldc_lead_angle" type="float" value="0.0"/>
+  <property name="sbldc_no_feedback" type="bool" value="True"/>
   <property name="sbldc_option" type="bool" value="False"/>
-  <property name="sbldc_output_fanuc" type="bool" value="False"/>
-  <property name="sbldc_output_hall" type="bool" value="False"/>
-  <property name="sbldc_pattern_in" type="int" value="25"/>
-  <property name="sbldc_pattern_out" type="int" value="25"/>
-  <property name="sbldc_poles" type="int" value="4"/>
+  <property name="sbldc_output_fanuc" type="bool" value="True"/>
+  <property name="sbldc_output_hall" type="bool" value="True"/>
+  <property name="sbldc_pattern_in" type="float" value="0.0"/>
+  <property name="sbldc_pattern_out" type="float" value="0.0"/>
+  <property name="sbldc_poles" type="float" value="0.0"/>
   <property name="sbldc_reverse" type="bool" value="False"/>
-  <property name="sbldc_scale" type="int" value="512"/>
+  <property name="sbldc_scale" type="float" value="0.0"/>
   <property name="sbldc_six_outputs" type="bool" value="False"/>
   <property name="sbldc_use_encoder" type="bool" value="False"/>
   <property name="sbldc_use_hall" type="bool" value="True"/>
@@ -4075,12 +4085,12 @@
   <property name="scbmotor_pulley" type="bool" value="False"/>
   <property name="scompfilename" type="string" value="scompensation"/>
   <property name="scomptype" type="int" value="0"/>
-  <property name="sdeadband" type="int" value="0"/>
-  <property name="sdirhold" type="int" value="1000"/>
-  <property name="sdirsetup" type="int" value="1000"/>
+  <property name="sdeadband" type="float" value="0.0"/>
+  <property name="sdirhold" type="float" value="1000.0"/>
+  <property name="sdirsetup" type="float" value="1000.0"/>
   <property name="sdrivertype" type="string" value="custom"/>
   <property name="sencodercounts" type="int" value="4000"/>
-  <property name="sencoderscale" type="int" value="0"/>
+  <property name="sencoderscale" type="float" value="4.0"/>
   <property name="serial_vfd" type="bool" value="False"/>
   <property name="servoperiod" type="float" value="1000000.0"/>
   <property name="sfiltergain" type="float" value="1.0"/>
@@ -4090,20 +4100,20 @@
   <property name="shomesw" type="int" value="0"/>
   <property name="sideembededgvcp" type="bool" value="False"/>
   <property name="singlejogbuttons" type="bool" value="False"/>
-  <property name="sinvertencoder" type="int" value="0"/>
-  <property name="sinvertmotor" type="int" value="0"/>
+  <property name="sinvertencoder" type="bool" value="False"/>
+  <property name="sinvertmotor" type="bool" value="False"/>
   <property name="slatchdir" type="int" value="0"/>
-  <property name="smaxacc" type="int" value="300"/>
-  <property name="smaxoutput" type="int" value="2000"/>
-  <property name="smaxvel" type="int" value="2000"/>
-  <property name="smicrostep" type="int" value="5"/>
-  <property name="smotor_gear1driven" type="int" value="1"/>
-  <property name="smotor_gear1driver" type="int" value="1"/>
-  <property name="smotor_gear2driven" type="int" value="1"/>
-  <property name="smotor_gear2driver" type="int" value="1"/>
-  <property name="smotor_max" type="int" value="2000"/>
-  <property name="smotor_pulleydriven" type="int" value="1"/>
-  <property name="smotor_pulleydriver" type="int" value="1"/>
+  <property name="smaxacc" type="float" value="300.0"/>
+  <property name="smaxoutput" type="float" value="2000.0"/>
+  <property name="smaxvel" type="float" value="2000.0"/>
+  <property name="smicrostep" type="float" value="5.0"/>
+  <property name="smotor_gear1driven" type="float" value="1.0"/>
+  <property name="smotor_gear1driver" type="float" value="1.0"/>
+  <property name="smotor_gear2driven" type="float" value="1.0"/>
+  <property name="smotor_gear2driver" type="float" value="1.0"/>
+  <property name="smotor_max" type="float" value="2000.0"/>
+  <property name="smotor_pulleydriven" type="float" value="1.0"/>
+  <property name="smotor_pulleydriver" type="float" value="1.0"/>
   <property name="snearrange" type="float" value="200.0"/>
   <property name="snearscale" type="float" value="1.2"/>
   <property name="snegative_rot" type="bool" value="False"/>
@@ -4129,27 +4139,27 @@
   <property name="soincrvalue7" type="int" value="100"/>
   <property name="soincrvalue8" type="int" value="110"/>
   <property name="soincrvalue9" type="int" value="125"/>
-  <property name="soutputmaxvoltage" type="int" value="10"/>
-  <property name="soutputscale" type="int" value="2000"/>
-  <property name="soutputscale2" type="int" value="10"/>
+  <property name="soutputmaxvoltage" type="float" value="10.0"/>
+  <property name="soutputscale" type="float" value="2000.0"/>
+  <property name="soutputscale2" type="float" value="2000.0"/>
   <property name="spindleatspeed" type="bool" value="True"/>
   <property name="spindlespeedbar" type="bool" value="True"/>
   <property name="srbvoltage_5" type="bool" value="False"/>
   <property name="ssearchdir" type="int" value="0"/>
   <property name="ssingleinputencoder" type="bool" value="False"/>
-  <property name="ssteprev" type="int" value="200"/>
+  <property name="ssteprev" type="float" value="200.0"/>
   <property name="sstepscale" type="int" value="0"/>
-  <property name="sstepspace" type="int" value="1000"/>
-  <property name="ssteptime" type="int" value="1000"/>
+  <property name="sstepspace" type="float" value="1000.0"/>
+  <property name="ssteptime" type="float" value="1000.0"/>
   <property name="standalonegvcp" type="bool" value="False"/>
-  <property name="steprev" type="string" value="52138"/>
+  <property name="steprev" type="string" value="57107"/>
   <property name="stepspace" type="int" value="5000"/>
   <property name="steptime" type="int" value="5000"/>
   <property name="suseatspeed" type="bool" value="False"/>
   <property name="susebacklash" type="int" value="0"/>
   <property name="susecomp" type="int" value="0"/>
   <property name="susehomeindex" type="int" value="0"/>
-  <property name="susenearrange" type="bool" value="False"/>
+  <property name="susenearrange" type="bool" value="True"/>
   <property name="susenegativevoltage" type="bool" value="True"/>
   <property name="suseoutputrange2" type="bool" value="False"/>
   <property name="tempexists" type="int" value="0"/>
@@ -4231,19 +4241,19 @@
   <property name="xencodercounts" type="int" value="4000"/>
   <property name="xencoderscale" type="int" value="0"/>
   <property name="xhomefinalvel" type="float" value="0.0"/>
-  <property name="xhomelatchvel" type="float" value="0.416666666667"/>
+  <property name="xhomelatchvel" type="float" value="0.0666666666667"/>
   <property name="xhomepos" type="float" value="52.0"/>
   <property name="xhomesearchvel" type="float" value="13.3166666667"/>
-  <property name="xhomesw" type="float" value="0.0"/>
+  <property name="xhomesw" type="float" value="-0.5"/>
   <property name="xhomevel" type="float" value="1.5"/>
   <property name="xinvertencoder" type="bool" value="False"/>
   <property name="xinvertmotor" type="bool" value="False"/>
   <property name="xlatchdir" type="int" value="1"/>
-  <property name="xmaxacc" type="float" value="400.0"/>
+  <property name="xmaxacc" type="float" value="250.0"/>
   <property name="xmaxferror" type="float" value="10.0"/>
-  <property name="xmaxlim" type="float" value="104.0"/>
+  <property name="xmaxlim" type="float" value="103.5"/>
   <property name="xmaxoutput" type="float" value="0.0"/>
-  <property name="xmaxvel" type="float" value="33.3333333333"/>
+  <property name="xmaxvel" type="float" value="25.0"/>
   <property name="xmicrostep" type="float" value="256.0"/>
   <property name="xminferror" type="float" value="1.0"/>
   <property name="xminlim" type="float" value="0.0"/>
@@ -4323,7 +4333,7 @@
   <property name="yencodercounts" type="int" value="4000"/>
   <property name="yencoderscale" type="int" value="0"/>
   <property name="yhomefinalvel" type="float" value="0.0"/>
-  <property name="yhomelatchvel" type="float" value="0.5"/>
+  <property name="yhomelatchvel" type="float" value="0.0666666666667"/>
   <property name="yhomepos" type="float" value="52.0"/>
   <property name="yhomesearchvel" type="float" value="13.3166666667"/>
   <property name="yhomesw" type="float" value="104.0"/>
@@ -4331,11 +4341,11 @@
   <property name="yinvertencoder" type="bool" value="False"/>
   <property name="yinvertmotor" type="bool" value="True"/>
   <property name="ylatchdir" type="int" value="1"/>
-  <property name="ymaxacc" type="float" value="400.0"/>
+  <property name="ymaxacc" type="float" value="200.0"/>
   <property name="ymaxferror" type="float" value="10.0"/>
-  <property name="ymaxlim" type="float" value="104.0"/>
+  <property name="ymaxlim" type="float" value="103.5"/>
   <property name="ymaxoutput" type="float" value="0.0"/>
-  <property name="ymaxvel" type="float" value="25.0"/>
+  <property name="ymaxvel" type="float" value="13.3333333333"/>
   <property name="ymicrostep" type="float" value="256.0"/>
   <property name="yminferror" type="float" value="1.0"/>
   <property name="yminlim" type="float" value="0.0"/>
@@ -4419,9 +4429,9 @@
   <property name="zeroy" type="bool" value="False"/>
   <property name="zeroz" type="bool" value="False"/>
   <property name="zhomefinalvel" type="float" value="0.0"/>
-  <property name="zhomelatchvel" type="float" value="0.5"/>
+  <property name="zhomelatchvel" type="float" value="0.0666666666667"/>
   <property name="zhomepos" type="float" value="-50.0"/>
-  <property name="zhomesearchvel" type="float" value="33.3333333333"/>
+  <property name="zhomesearchvel" type="float" value="33.3166666667"/>
   <property name="zhomesw" type="float" value="1.0"/>
   <property name="zhomevel" type="float" value="1.5"/>
   <property name="zinvertencoder" type="bool" value="False"/>
@@ -4429,7 +4439,7 @@
   <property name="zlatchdir" type="int" value="1"/>
   <property name="zmaxacc" type="float" value="600.0"/>
   <property name="zmaxferror" type="float" value="10.0"/>
-  <property name="zmaxlim" type="float" value="1.0"/>
+  <property name="zmaxlim" type="float" value="0.0"/>
   <property name="zmaxoutput" type="float" value="0.0"/>
   <property name="zmaxvel" type="float" value="66.6666666667"/>
   <property name="zmicrostep" type="float" value="128.0"/>

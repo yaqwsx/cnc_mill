@@ -1,9 +1,0 @@
-O<probe> sub
-
-#100 = #5422
-F100
-G38.2 Z[#5422 - 10]
-(DEBUG, #5422)
-G0 Z#100
-
-O<probe> endsub
